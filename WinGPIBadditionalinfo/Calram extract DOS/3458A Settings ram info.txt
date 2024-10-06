@@ -1,0 +1,26 @@
+
+It is not my impression that the other two NVRAMs are as important,
+they "only" contain stored functions and similar stuff, but if you
+want a copy of those as well, I belive they are located in full words
+from 0x120000...0x12ffff (1179648...1245182 decimal)
+65535 (64k) bytes total
+Each IC = 32k
+
+https://www.febo.com/pipermail/volt-nuts/2009-August/000052.html
+
+
+
+0x120000 (1179648) - 0x127FFF (1212415)
+
+0x128000 (1212416) - 0x12FFFF (1245183)
+
+
+ 262,144-bit, fully static, nonvolatile SRAMs organized as 32,768 words by 8 bits.
+
+
+
+Address range (Cal Ram) 0x60000 (393216) - 0x60FFE (397310)
+
+Address range (Settings Ram 1) 0x120000 (1179648) - 0x127FFF (1212415)
+
+Address range (Settings Ram 2) 0x128000 (1212416) - 0x12FFFF (1245183)

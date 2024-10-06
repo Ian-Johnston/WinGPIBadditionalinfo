@@ -1,0 +1,3 @@
+Managed version, .Net4
+
+This is referenced in the main \WinGPIBproj app.

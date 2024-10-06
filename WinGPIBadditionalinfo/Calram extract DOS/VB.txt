@@ -1,0 +1,28 @@
+HEX to double
+40e387b0724e1ca5 = 3.999751395e+04 or 39997.51395
+
+Option Strict On
+Option Explicit On
+Option Infer Off
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim bigEndianHex As String = "40E06667B03B7B65"
+        MsgBox(BigEndianHexToDouble(bigEndianHex).ToString)
+    End Sub
+    Function BigEndianHexToDouble(s As String) As Double
+        Dim bytes As New List(Of Byte)
+        For i As Integer = s.Length - 2 To 0 Step -2
+            bytes.Add(Convert.ToByte(s.Substring(i, 2), 16))
+        Next
+        Return BitConverter.ToDouble(bytes.ToArray, 0)
+    End Function
+End Class
+
+##################################################################
+
+
+
+HEX to number
+
+' Assign the value 49153 to i.
+Dim i As Integer = Convert.ToInt32("c001", 16)

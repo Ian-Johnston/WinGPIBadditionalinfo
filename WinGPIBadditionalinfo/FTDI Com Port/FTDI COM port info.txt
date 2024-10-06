@@ -1,0 +1,18 @@
+If you install the FTDI driver software then it will appear in Device Manager under PORTS as FTDI......
+But this won't work properly.
+Doesn't work with WinGPIB
+Doesn't work with RealTerm
+Does appear to work with TeraTerm
+
+It has to appear in Device Manager as "USB Serial Port (ComX)" where X is your port number.
+
+Zadig doesn't help despite changing the driver type. It has to appear in ZADIG as FTDIBUS (v2.12.6.0) but the selection to do so is not listed.
+
+So, in Device Manager right click UPDATE DRIVER and select BROWSE FOR DRIVERS ON MY COMPUTER
+Then at the bottom select LET ME PICK FROM A LIST OF AVAILABLE DRIVERS ON MY COMPUTER, and select USB Serial Port Version........
+HAVE DISK is an option but I dodn't need to do that.
+
+Note:
+Ahead of all this I had installed the FTDIPORT.inf and FTDIBUS.inf drivers manually (right click).
+
+Done.

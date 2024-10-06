@@ -1,0 +1,582 @@
+Here are some helpful hints n tips for various test instruments and how to communicate with them
+[any GPIB/Comms addresses detailed are examples only]
+
+################################################################################################
+
+Interfaces:
+GPIBDevice_NINET 	- NI boards
+GPIBDevice_ADLink 	- ADLink boards
+GPIBDevice_gpib488 	- Keithley, MCC and older NI boards
+VisaDevice 		- Generic interface (GPIB,USB etc.) via Visa
+SerialDevice 		- Serial ports
+
+################################################################################################
+
+Default Checkboxes/settings:
+	STB mask = 16
+	Enable Polling = Checked
+	Abort Errors = Checked
+	Isolate data to right of leading two Chars = Unchecked
+	Isolate data to left of Char: "N" = Unchecked
+	/1000 = unchecked
+	Terminator = Unchecked
+	Send Blocking = Unchecked
+	EOI Incapable Instruments = Unchecked
+	Delay Op.(ms) = 1
+	Timeout (ms) = 5000
+
+Default PDVS2mini tab defaults:
+	Init Step Size (bits) = 5
+	Init. Accuracy = 0.00010
+	Step Size Final (Bits) = 1
+	Final Accuracy = 0.00001
+	Comms Delay (mS) = 125
+	Low/Shut = 13.0/12.5Vdc
+	C.Enable = YES
+	O/L mA = 400mA
+	Full mA = 70mA
+	DegC =
+	3458A Serial Number =
+	User/Company = 
+	Serial No. =
+	Serial = OK
+	Soak = 168hrs
+	DC Inp. = OK
+	Chg/Dis. = OK
+
+################################################################################################
+
+Moving your configuration data to a new PC:
+
+Prior to WinGPIB V3.178:
+  On your old PC go to
+  C:\Users\USERNAME\AppData\Local\Microsoft\PDVS2_GPIB.exe_Url_somegreatlonglistoflettersnumbers\1.0.0.0\
+  and in there is a file called user.config
+  Copy that file out and put it in the similarly named folder in your new PC.
+  Note: The large folder name will be different.
+
+WinGPIB V3.178 onwards:
+  Hit EXPORT PROFILES button which saves to ProfilesData.dat
+  Copy the ProfilesData.dat file to \WinGPIBdata on the new PC
+  On new PC hit IMPORT PROFILES which loads ProfilesData.dat
+
+################################################################################################
+
+Formulating the Address:
+GPIB:		GPIB[board]::address::INSTR
+Example:	GPIB1::22::INSTR
+
+USB:		USB[board]::manufacturer ID::model code::serial number::INSTR
+
+TCPIP:		TCPIP[board]::IP address[::LAN device name]::INSTR
+Example:	TCPIP0::192.168.1.139::inst0::INSTR
+
+Serial:		COMport,baud,parity,databits,stopbits [,newline]
+Example:	COM4:115200,N,8,1,CRLF
+
+################################################################################################
+
+Terminator Info:
+CR carriage return……..moves to column zero without advancing paper
+LF line feed…… advances paper without returning to column zero
+CRLF……. does both the above
+\r = CR = 0x0D = 13
+\n = LF = 0x0A = 10 = newline
+
+MAV not set errors:
+MAV = Message AVailable, i.e. there is a response in the output buffer of the device.
+So, example error: "Poll timeout: MAV not set, status byte=4"
+Check your device manual to see where the MAV is coded in the status byte and set the MAV mask accordingly.
+The standard value is 16 and is set by default in WinGPIB.
+If it still doesn't work the only option is to disable polling altogether although you then might experience
+delays if you have more than one device connected via GPIB.
+The MAV is usually bit 4 of the status STB byte. So, with STB Mask set to 16 means that bit 4 status is
+communicated.
+
+################################################################################################
+
+GPIB-USB-HS it works very well via NI-Visa.
+Undocumented feature:  in 32bit apps it can be controlled without NI-Visa too if you select ADLink as interface.
+This is because the NI driver also installs the gpib32.dll (for compatibility with older software I guess) and
+ADLink relies on this dll. WinGPIB is currently 32bit....:-)
+
+################################################################################################
+
+DEVICE = 3458A:
+GPIB1::22::INSTR
+
+END ALWAYS
+NRDGS 1
+NPLC 100
+
+TARM SGL
+
+Uses E5810A:-
+For GPIB address in the app so the Remote GPIB entry status in Keysight Connection Expert, i.e. GPIB1::22:INST
+
+Notes:
+DISP OFF	Blanks the VFD except for dashes across the middle.
+DISP OFF ""	Blanks the VFD completely
+
+################################################################################
+
+DEVICE = 3457A
+GPIB1::5::INSTR
+
+Use the "HP3457A Enable 7th Digit" checkbox to gain another DP which is only available via GPIB.
+
+END ALWAYS
+NDIG 6
+NRDGS 1
+NPLC 100
+
+TARM SGL
+
+Non GPIB stuff:
+To access 7th digit (7.5 digit mode) on the DMM do normal then read 7th digit separately
+Blue, 8,  2 x Down Arrow......that shows the 7th digit register.
+
+################################################################################
+
+DEVICE = Keithley 2015THD
+GPIB1::24::INSTR (top)
+GPIB1::23::INSTR (bottom)
+
+FUNC 'VOLT:DC'
+VOLT:DC:NPLC 10
+:INIT:CONT OFF
+
+:READ?
+
+################################################################################
+
+DEVICE = Keithley 2001
+GPIB1::27::INSTR
+
+"Isolate data to left of Char:" checked.
+Set the Char to "N"
+
+:SENS:VOLT:DC:DIG 8.5;		Set for 8.5 digits on display and GPIB
+:SENS:VOLT:DC:NPLC 10;
+:DISP:WIND:TEXT:DATA "Ian Johnston";STAT ON;		write text to main display
+:DISP:WIND2:TEXT:DATA "Ian Johnston";STAT ON;		write text to lower display
+INIT:CONT OFF		turn off to avoid INIT error -213 i.e. INIT IGNORED
+:READ?
+
+Cal ram extract/decode:
+:CAL:PROT:DATA?
+The response is an ASCII string of 99 numbers separated by commas.
+
+Other:
+:FORM:ELEM READ  (as pre run)
+MEAS?  (At run)
+
+Calibration - Sample commands:
+Power up and presse recessed CAL button.
+:CAL:PROT:DC:ZERO		4-wire short across inputs
+:CAL:PROT:DC:LOW 1.9999978	2-wire 2Vdc Cal
+:CAL:PROT:DC:HIGH		2-wire 20Vdc Cal
+:CAL:PROT:DATE '05/13/22'
+:CAL:PROT:SAVE			Save Cal Constants
+
+################################################################################
+
+DEVICE = Racal-Dana 1991
+GPIB2::25::INSTR
+Rear switch set to Talk only disabled
+See page 81 of Racal-Dana_1991-1992-IM.pdf
+
+"Enable Polling" unchecked.
+"Terminator" unchecked.
+"No EOI" unchecked.
+"Isolate data to right of leading two Chars" checked (the returned data from the 1991 uncludes 2 letter function codes ahead of the data)
+
+Note: It appears the 1991 needs an input running for GPIB to return 'any' data.
+
+DCL	device clear - reverts to power-up state
+SPD	serial poll disable - any reply will be output message format
+SPE	serial poll enable - any reply will send status byte
+GTL	go to local
+GET	group execute trigger (takes a measurement)
+CK	check
+
+Measurement codes
+FA	Freq A
+FC	Freq C (1992 only)
+PA	Period A
+TI	Time interval
+TA	Total A by B
+PH	Phase of A relative to B
+RA	Ration A/B
+RC	Ration A/C (1992 only)
+
+################################################################################
+
+DEVICE = Fluke 8842A
+GPIB1::26::INSTR
+VDC 10V mode
+
+*
+F1
+
+R3
+
+Info:
+From web: Initialise the meter:-
+*F1 R0 S0 T0
+
+###############################################################################
+
+DEVICE = Keysight 34461A
+LAN connection
+
+TCPIP0::192.168.1.139::inst0::INSTR
+
+*RST
+CALC:SMO:RESP MED
+VOLT:DC:NPLC 10
+
+:READ?
+
+###############################################################################
+
+DEVICE = Keysight 34461A
+USB connection
+
+USB0::manufacturer ID::model code::serial number::INSTR
+Get the details from Keysight Connection Expert.
+Example:-
+USB0::0x2A8D::0x1301::MY12345678::INSTR
+
+*RST
+CALC:SMO:RESP MED
+VOLT:DC:NPLC 10
+
+:READ?
+
+###############################################################################
+
+DEVICE = Agilent 34401A
+Serial comms via COM1 on PC
+
+There are two options, as follows:
+
+................................
+OPTION 1:-
+
+COM1:9600,N,8,1,CRLF
+INTERFACE = Com port
+
+Set up the 34401A (via DMM front panel) for SERIAL, 8-bit, No Parity.
+
+As a PRE-RUN or a SEND ASYNC command, SYST:REM must be sent first to put 34401A in remote mode
+after power up of the meter.
+
+Sample selection of 34401A commands:
+CONF:VOLT:DC
+CONF:VOLT:AC
+CONF:VOLT:DC 10,0.00001			function:range:resolution
+CONF:VOLT:DC 10,MIN			equivalent of 100 NPLC
+
+NPLC is set automatically when you set the resolution:
+Fast 6 digit = 10 PLC
+Slow 6 digit = 100 PLC
+
+Getting data from the 34401A:
+READ?
+
+Other:
+
+*RST
+*CLS
+DISPlay OFF
+FUNCtion ""
+:RESolution MAXimum
+:NPLCycles MINimum
+ZERO:AUTO OFF
+:RANGe:AUTO OFF
+CALCulate:STATe OFF
+TRIGger:SOURce IMMediate
+TRIGger:DELay 0 
+READ? 
+
+................................
+OPTION 2:-
+
+Still using the serial cable but using Keysight IO in Visa mode. The Keysight app will map COM1 on the PC to ASRL1 Visa address.
+
+ASRL1::INSTR
+INTERFACE = VISA
+
+Set up the 34401A to SERIAL interface and 9600 baud, 8bit, No parity.
+
+Set up Keysight Connection Expert as follows:
+Visa Interface ID = ASRL1
+SICL Interface ID = COM1
+Logical Unit = 1
+Baud = 9600
+Data Size = 8
+Flow Control = DTR/DSR
+Stop Bits = 2
+Parity = None
+SRQ Line = RI
+
+Test the connection using Keysight Interactive IO
+Send SYST:REM as your first command otherwise you will be able to receive data.
+Try CONF:VOLT:DC and CONF:VOLT:AC make sure the 34401A can switch voltage modes
+Then send READ? and it should return data.
+*IDN? should also return DMM data also.
+
+Then, in WinGPIB there are two options:
+INTERFACE = VISA
+ADDRESS = ASRL1::INSTR
+Enable Polling = unchecked
+Terminator NewLine = unchecked
+Terminator CRLF = checked
+When you CREATE DEVICE the 34401A will BEEP.
+Send Async SYST:REM first
+Then you can READ?
+................................
+OPTION 3:-
+
+GPIB interface.
+
+GPIB1::6::INSTR
+INTERFACE = VISA
+
+
+###############################################################################
+
+DEVICE = HP 3245A
+GPIB1::10::INSTR
+
+RST			Reset
+SCRATCH			Clear 3245A memory
+USE 0			Select channel A
+USE CHANA		Select channel A
+USE 1			Select channel B
+USE CHANB		Select channel B
+USE?			Returns the current channel in use
+FREQ 2E3		2 kHz waveform frequency
+FREQ 2000		2000 Hz waveform frequency
+DCOFF -2.0		-2Vdc offset voltage
+DCRES HIGH		DC high resolution mode
+APPLY DCV 1.0		Output DC voltage 1.0Vdc
+APPLY DCI 3.25E-3	Output DC current 3.25mA
+APPLY ACV 3.0		Output sine wave 3.0Vac peak to peak
+APPLY SQV 3.0		Output square wave 3.0Vac peak to peak
+DUTY 30			Set 30% duty cycle
+APPLY RPV 3.0		Output ramp value 3Vdc peak to peak
+
+NOTES:
+If you measure the RMS value on a 3458A it will be 1.0608 Vac RMS since Vrms = Vpp/2.828 for a sine wave
+
+
+################################################################################
+
+DEVICE = Agilent 34405A
+USB connection
+
+USB0::manufacturer ID::model code::serial number::INSTR
+Get the details from Keysight Connection Expert.
+Example:-
+USB0::0x0957::0x0618::MY50329073::INSTR
+
+READ?			Read from 34405A
+CONF:VOLT:AC
+CONF:VOLT:DC
+CONF:VOLT:DC 0.1	VDC 100mV range
+CONF:RES
+CONF:RES 1000		Resostance 1k range
+CONF:CURR:DC
+
+*IDN?			device info
+
+###############################################################################
+
+DEVICE = EEZ-BB3 Power Supply (Serial mode)
+COM4:115200,N,8,1,CRLF
+
+OUTP OFF, CH1		sets Ch1 off
+OUTP ON, CH1		sets Ch1 on
+INST:SEL CH1		select Ch1 to be programmed
+VOLT 12			sets output voltage to 12Vdc
+CURR 0.5		sets CC setting to 0.5A (500mA)
+
+Readback commands:
+*IDN?			device info
+volt?			current voltage setting
+INST?			returns CH1 or CH2 whichever is selected for use, default CH1
+
+###############################################################################
+
+DEVICE = EEZ-BB3 Power Supply (TCPIP mode)
+TCPIP0::192.168.1.184::5025::SOCKET
+
+Send Async commands
+OUTP OFF, CH1		sets Ch1 off
+OUTP ON, CH1		sets Ch1 on
+INST:SEL CH1		select Ch1 to be programmed
+VOLT 12			sets output voltage to 12Vdc
+CURR 0.5		sets CC setting to 0.5A (500mA)
+
+Query Async Readback commands:
+*IDN?			device info
+volt?			output voltage setting
+curr?			output current setting
+INST?			returns CH1 or CH2 whichever is selected for use, default CH1
+
+################################################################################
+
+DEVICE = Agilent E3632A PSU
+GPIB1::8::INSTR
+
+VOLT:RANG P30V		Sets 30V mode
+OUTP ON			Sets output on
+VOLT 0			Sets 0Vdc output
+CURR 4			Sets current to full rated 4.0A
+
+################################################################################
+
+DEVICE = Agilent E3648A PSU
+GPIB1::7::INSTR
+
+INST:SEL OUTP1		Selects Ch.1
+VOLT:RANG P20V
+VOLT 20
+CURR 0.5
+OUTP ON
+INST:SEL OUTP2		Selects Ch.2
+VOLT:RANG P8V
+VOLT 5
+CURR 1.0
+OUTP ON
+
+################################################################################
+
+DEVICE = HP 6611C PSU
+GPIB1::4::INSTR
+
+OUTP ON			Sets output on
+OUTP OFF		Sets output off
+VOLT 0			Sets 0Vdc output
+CURR 4			Sets current to full rated 4.0A
+
+################################################################################
+
+DEVICE = AGILENT 3499A
+
+GPIB1::15::INSTR
+
+44471A General Purpose Relay Module in Slot 1
+ROUT:OPEN (@100)	open relay 00 in slot 1
+ROUT:CLOSE (@100)	close relay 00 in slot 1
+
+Info:
+(@snn) = where s is slot number, nn is channel number
+
+################################################################################
+
+DEVICE = Tektronix 4050 DMM (Fluke 8846 equivalent)
+
+* Install NI VISA and a GPIB adapter.
+* Make sure everything works as expected. Use NI MAX to double-check GPIB address details.
+* You can either:
+    * Set the Tek 4050 into 8842A emulation mode.
+    * Command for "emulated" 8842A: *F1R1S1T2
+* or use the following equivalent commands to operate the 4050 DMM in "native mode"; refer to the setup instructions from Ian:
+    * PRE RUN: Conf:volt:dc DEF; volt:dc:nplc 10; :INIT
+    * AT RUN: read?
+* With zero-ing:
+  *Send Asnyc: Conf:volt:dc DEF; volt:dc:nplc 10; Zero:auto 1; :INIT
+  *At run: read?
+
+Further tips:
+* If your sample rate settings allow, use 100 NPLCycles with the following command for 'Send Asnyc:' 'Conf:volt:dc DEF; volt:dc:nplc 100; Zero:auto 1; :INIT'
+* You might also want to save the 4050 DMM's VFD / display a few hours of operation, and add the following command to turn it off: 'DISP OFF' to the 'Send Async:' command.
+
+################################################################################
+
+DEVICE = Keithley 195 (non-A)
+
+"STB mask" set to "16" (default)
+"Enable Polling" disabled
+"Remove 1st two letters" disabled
+"Abort Errors" enabled
+"Terminator" disabled
+"Send Blocking" enabled
+
+In the "Pre run" entry field:
+F0Z1R1P2S6W0A0G1T4X
+In the "At run:" entry field:
+No entry
+
+Configuration details for the type 195 device. Reference: Keithley 195 Publication Date: August 1983 Document Number: 195-901-0IC
+Section 4.10 DEVICE-DEPENDENT COMMAND PROGRAMMING
+"F0Z1R1P2S6W0A0G1T4X" configures the Keithley type 195 DMM as follows:
+F0 = DC Volts
+Z1 = Zero-ing
+R1 = Range 20 mV
+P2 = Filter off, 32 samples averaged for 5 1/2 digits
+S6 = 100 ms integration period, 5 1/2 digits
+W0 = min. delay.
+A0 = Enable internal multiplex routines (for accuracy)
+G1 = Readings without prefix/suffix.
+T4 = Trigger Continuous on X commands
+X = Execute
+
+################################################################################
+
+DEVICE = Stanford Research SR630, 16CH Thermocouple Monitor
+GPIB0::19::INSTR
+
+UNIT 12,CENT		- Set units of Ch.12 to Centigrade
+TTYP 12, K		- Specify K-type thermocouple for Ch.12
+MEAS? 12		- Read temp from Ch.12
+
+################################################################################
+
+DEVICE = Keithley 2306 Battery Charger/Simulator
+GPIB2::11::INSTR
+
+DISP:CHAN 1			select battery channel as active one
+VOLT 5				set output voltage to 5Vdc
+SENS:CURR:RANG:AUTO ON		Enable auto range for current
+CURR 750e-3			Set current limit to 750mA
+CURR:TYPE TRIP			Select trip mode for current limit
+SENS:FUNC 'VOLT'		Select the voltage measurement function
+SENS:NPLC 2			Set integration rate to 2 PLC
+SENS:AVER 5			Set average reading count to 5
+OUTP ON				Turn on the PSU output
+READ?				Trigger a read
+
+SENS:FUNC 'CURR'		Select current measurement function
+READ?				Trigger a read
+
+
+################################################################################
+
+DHO900 series (presume 800 series also)
+
+Uncheck "Enable Polling", all rest as default.
+
+Address = TCPIP0::192.168.1.205::inst0::INSTR
+
+Sending config/setup commands (SEND ASYNC):
+:CHANnel1:DISPlay OFF		Turn channel 1 off
+:CHANnel1:DISPlay ON		Turn channel 1 on
+:CHANnel1:SCALe 0.1		Sets the vertical scale of Ch.1 to 0.1 V/div
+:CHANnel1:COUPling AC		Sets the coupling mode of Ch.1 to AC
+
+Reading back data (QUERY ASYNC):
+:MEASure:STATistic:ITEM? AVERages,VPP,CHANnel1		Queries the average value of Ch.1 peak to peak.
+:MEAS:STAT:ITEM? AVER,VPP,CHAN1				As above (don't need lower case)
+:TRIGger:STATus?					Query the current trigger status, i.e. AUTO will be returned, albeit due to text var it will be displayed in box.
+:TRIG:STAT?						As above (don't need lower case)
+
+:MEAS:STAT:ITEM? CURR,ACRM,CHAN1			Current value AC RMS, Ch.1
+:MEAS:STAT:ITEM? DEV,ACRM,CHAN1				Standard Deviation AC RMS, Ch.1
+
+
+
+################################################################################

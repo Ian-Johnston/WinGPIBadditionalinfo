@@ -1,0 +1,311 @@
+All you have to do is enter the commands
+	TRIG HOLD
+	QFORMAT NUM
+	MREAD 393216
+	MREAD 393218
+	MREAD 393220
+	...
+	MREAD 397308
+	MREAD 397310
+
+and save the results.
+
+But that's 2048 MREAD commands, so having a program to do it
+would be a lot easier...
+
+
+
+
+
+
+This is a dump of the CALRAM, with device-addresse.  If you use
+MREAD, you need to multiply the address by two and add 0x60000:
+
+CalRam:
+00060000 40e387b0724e1ca5        	.double	3.999751395e+04	@0x000 40K reference
+00060008 401caec53f49b86c        	.double	7.170674313e+00	@0x008 7V reference
+00060010 3f5f2bea74341701        	.double	1.902560195e-03	@0x010 dcv zero front 100mV
+00060018 bf6c3c70cfa013b1        	.double	-3.446789106e-03	@0x018 dcv zero rear 100mV
+00060020 3f2926695a613d43        	.double	1.918796162e-04	@0x020 dcv zero front 1V
+00060028 bf36b0763e594f67        	.double	-3.462113076e-04	@0x028 dcv zero rear 1V
+00060030 3efcb169c5e30e8c        	.double	2.736379644e-05	@0x030 dcv zero front 10V
+00060038 bf01c710cb49a0bc        	.double	-3.390808107e-05	@0x038 dcv zero rear 10V
+00060040 bf374e66fc1c76ca        	.double	-3.556252887e-04	@0x040 dcv zero front 100V
+00060048 bf374e66fc1c76ca        	.double	-3.556252887e-04	@0x048 dcv zero rear 100V
+00060050 bf00cd21f93b4ade        	.double	-3.204593591e-05	@0x050 dcv zero front 1KV
+00060058 bf00cd21f93b4ade        	.double	-3.204593591e-05	@0x058 dcv zero rear 1KV
+00060060 402bb6444b89982a        	.double	1.385598980e+01	@0x060 ohm zero front 10
+00060068 3ff633a34dd87bce        	.double	1.387606911e+00	@0x068 ohm zero front 100
+00060070 3fc1bde269b326f1        	.double	1.386073128e-01	@0x070 ohm zero front 1K
+00060078 3f8cc0105f68f191        	.double	1.403820792e-02	@0x078 ohm zero front 10K
+00060080 3f47a45e5a6c9462        	.double	7.214985570e-04	@0x080 ohm zero front 100K
+00060088 3f1a1c078c6ab664        	.double	9.959980080e-05	@0x088 ohm zero front 1M
+00060090 3f0380e3b5ff8529        	.double	3.719992560e-05	@0x090 ohm zero front 10M
+00060098 3f09cb7fbf28a7db        	.double	4.919990160e-05	@0x098 ohm zero front 100M
+000600a0 3f09cb7fbf28a7db        	.double	4.919990160e-05	@0x0a0 ohm zero front 1G
+000600a8 402a64ce170cea26        	.double	1.319688484e+01	@0x0a8 ohm zero rear 10
+000600b0 3ff50df9128fc784        	.double	1.315911362e+00	@0x0b0 ohm zero rear 100
+000600b8 3fc0d58a2688d03c        	.double	1.315167130e-01	@0x0b8 ohm zero rear 1K
+000600c0 3f8a5e569146a74d        	.double	1.287524825e-02	@0x0c0 ohm zero rear 10K
+000600c8 3f449f46a7f26f40        	.double	6.293387413e-04	@0x0c8 ohm zero rear 100K
+000600d0 3f05138ab849cdd5        	.double	4.019991960e-05	@0x0d0 ohm zero rear 1M
+000600d8 bef4c302eb07bf4d        	.double	-1.979996040e-05	@0x0d8 ohm zero rear 10M
+000600e0 bef92a7024a48ac9        	.double	-2.399995200e-05	@0x0e0 ohm zero rear 100M
+000600e8 bef92a7024a48ac9        	.double	-2.399995200e-05	@0x0e8 ohm zero rear 1G
+000600f0 3f82b38a38bf8728        	.double	9.131507737e-03	@0x0f0 ohmf zero front 10
+000600f8 3f83033c9e21a6a4        	.double	9.283517433e-03	@0x0f8 ohmf zero front 100
+00060100 3f4f2e3b28813062        	.double	9.515560969e-04	@0x100 ohmf zero front 1K
+00060108 3f50039aedf92f74        	.double	9.774220452e-04	@0x108 ohmf zero front 10K
+00060110 3f1a0bec635d8049        	.double	9.935980128e-05	@0x110 ohmf zero front 100K
+00060118 3f1bff365bf70d9a        	.double	1.067997864e-04	@0x118 ohmf zero front 1M
+00060120 3f19a33bd887a097        	.double	9.779980440e-05	@0x120 ohmf zero front 10M
+00060128 3f1b866aa813f7cc        	.double	1.049997900e-04	@0x128 ohmf zero front 100M
+00060130 3f1b866aa813f7cc        	.double	1.049997900e-04	@0x130 ohmf zero front 1G
+00060138 3f7ba0d2627aed67        	.double	6.745168510e-03	@0x138 ohmf zero rear 10
+00060140 3f7c266bad8003b7        	.double	6.872578255e-03	@0x140 ohmf zero rear 100
+00060148 3f47d7ceb2552c63        	.double	7.276305447e-04	@0x148 ohmf zero rear 1K
+00060150 3f4667aeb672694e        	.double	6.837466325e-04	@0x150 ohmf zero rear 10K
+00060158 3f11c9ff975782bf        	.double	6.785986428e-05	@0x158 ohmf zero rear 100K
+00060160 3f1216809a5643c1        	.double	6.899986200e-05	@0x160 ohmf zero rear 1M
+00060168 3f097af7f1e69952        	.double	4.859990280e-05	@0x168 ohmf zero rear 10M
+00060170 3f0b5e26c172f088        	.double	5.219989560e-05	@0x170 ohmf zero rear 100M
+00060178 3f0b5e26c172f088        	.double	5.219989560e-05	@0x178 ohmf zero rear 1G
+00060180 0000019f                	.long	         415	@0x180 autorange offset ohm 10
+00060184 00000029                	.long	          41	@0x184 autorange offset ohm 100
+00060188 00000004                	.long	           4	@0x188 autorange offset ohm 1k
+0006018c 00000000                	.long	           0	@0x18c autorange offset ohm 10k
+00060190 00000000                	.long	           0	@0x190 autorange offset ohm 100k
+00060194 00000000                	.long	           0	@0x194 autorange offset ohm 1M
+00060198 00000000                	.long	           0	@0x198 autorange offset ohm 10M
+0006019c 00000000                	.long	           0	@0x19c autorange offset ohm 100M
+000601a0 00000000                	.long	           0	@0x1a0 autorange offset ohm 1G
+000601a4 40414b85974038ab        	.double	3.459001437e+01	@0x1a4 cal 0 temperature
+000601ac 4041514611239ab1        	.double	3.463495077e+01	@0x1ac cal 10 temperature
+000601b4 404149398d69e0ae        	.double	3.457206886e+01	@0x1b4 cal 10k temperature
+000601bc aaaf                    	.word	       43695	@0x1bc Cal_Sum0
+000601be b6                      	.byte	         -74	@0x1be vos dac
+000601bf  > -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- a0   _______________ 
+000601c0 bf426fca5f844e1c        	.double	-5.626428747e-04	@0x1c0 dci zero rear 100nA
+000601c8 bf78af31e9d15976        	.double	-6.026453947e-03	@0x1c8 dci zero rear 1uA
+000601d0 bf7822864b92dc98        	.double	-5.892300215e-03	@0x1d0 dci zero rear 10uA
+000601d8 bf77b55affb88373        	.double	-5.788188424e-03	@0x1d8 dci zero rear 100uA
+000601e0 bf77472c64fc6f34        	.double	-5.683110634e-03	@0x1e0 dci zero rear 1mA
+000601e8 bf770b99887177c5        	.double	-5.626296747e-03	@0x1e8 dci zero rear 10mA
+000601f0 bf41c815f7445785        	.double	-5.426509147e-04	@0x1f0 dci zero rear 100mA
+000601f8 bf4105b493067f51        	.double	-5.194789610e-04	@0x1f8 dci zero rear 1A
+00060200 3f33693d1af3e1af        	.double	2.961897071e-04	@0x200 dcv gain 100mV
+00060208 3f6848aa8440ff6f        	.double	2.964337387e-03	@0x208 dcv gain 1V
+00060210 3f9e55f2377d8995        	.double	2.962473358e-02	@0x210 dcv gain 10V
+00060218 3fd2f88eb57edac0        	.double	2.964207432e-01	@0x218 dcv gain 100V
+00060220 4007b2e12408fc1b        	.double	2.962343484e+00	@0x220 dcv gain 1KV
+00060228 3f9eb11e485fea1d        	.double	2.997252766e-02	@0x228 ohm gain 10
+00060230 3fd32e157a157817        	.double	2.996877377e-01	@0x230 ohm gain 100
+00060238 4007fea962909739        	.double	2.999346514e+00	@0x238 ohm gain 1K
+00060240 403dfeed478ccdf9        	.double	2.999580810e+01	@0x240 ohm gain 10K
+00060248 4082bd915e4ac5c6        	.double	5.996959806e+02	@0x248 ohm gain 100K
+00060250 40b7691fc3ba945a        	.double	5.993124080e+03	@0x250 ohm gain 1M
+00060258 40ed46779435036b        	.double	5.995573684e+04	@0x258 ohm gain 10M
+00060260 40ed46779435036b        	.double	5.995573684e+04	@0x260 ohm gain 100M
+00060268 40ed46779435036b        	.double	5.995573684e+04	@0x268 ohm gain 1G
+00060270 3f9eb11e4c3e9af0        	.double	2.997252789e-02	@0x270 ohm ocomp gain 10
+00060278 3fd32e159243bc53        	.double	2.996877602e-01	@0x278 ohm ocomp gain 100
+00060280 4007fea980d0cc93        	.double	2.999346739e+00	@0x280 ohm ocomp gain 1k
+00060288 403dfeeeb4fbb2f7        	.double	2.999582988e+01	@0x288 ohm ocomp gain 10k
+00060290 4082bd9336fc618f        	.double	5.996968822e+02	@0x290 ohm ocomp gain 100k
+00060298 40b7691fc3ba945a        	.double	5.993124080e+03	@0x298 ohm ocomp gain 1M
+000602a0 40ed46779435036b        	.double	5.995573684e+04	@0x2a0 ohm ocomp gain 10M
+000602a8 40ed46779435036b        	.double	5.995573684e+04	@0x2a8 ohm ocomp gain 100M
+000602b0 40ed46779435036b        	.double	5.995573684e+04	@0x2b0 ohm ocomp gain 1G
+000602b8 3e37552cee544b95        	.double	5.432571481e-09	@0x2b8 dci gain 100nA
+000602c0 3e3c1ae6a6502707        	.double	6.543724317e-09	@0x2c0 dci gain 1uA
+000602c8 3e6e32d9db309d0a        	.double	5.624934420e-08	@0x2c8 dci gain 10uA
+000602d0 3e9b21aa3291b60d        	.double	4.042909035e-07	@0x2d0 dci gain 100uA
+000602d8 3ec8d48f0a8f4c88        	.double	2.960003333e-06	@0x2d8 dci gain 1mA
+000602e0 3efec119e6ca646b        	.double	2.932958744e-05	@0x2e0 dci gain 10mA
+000602e8 3f665d4b0b8ce9d7        	.double	2.730032513e-03	@0x2e8 dci gain 100mA
+000602f0 3fa0a3295d7b4910        	.double	3.249482409e-02	@0x2f0 dci gain 1A
+000602f8 45                      	.byte	          69	@0x2f8 precharge dac
+000602f9 55                      	.byte	          85	@0x2f9 mc dac
+000602fa 4014097d30835a7b        	.double	5.009266623e+00	@0x2fa high speed gain
+00060302 3dd46a24a2c83445        	.double	7.426796044e-11	@0x302 il
+0006030a bd860b055295ca6f        	.double	-2.506004644e-12	@0x30a il2
+00060312 4163131689fcef6c        	.double	1.000056431e+07	@0x312 rin
+0006031a bf7d3f146331a7bb        	.double	-7.140235556e-03	@0x31a low aperture
+00060322 bfafad3829b42f60        	.double	-6.186843404e-02	@0x322 high aperture
+0006032a 3feffffd454fd517        	.double	9.999986986e-01	@0x32a high aperture slope .01 PLC
+00060332 3fefffff8f2da21f        	.double	9.999997899e-01	@0x332 high aperture slope .1 PLC
+0006033a 409a0bf4ea37aece        	.double	1.666989175e+03	@0x33a high aperture null .01 PLC 
+00060342 40d046be0ecdf649        	.double	1.666696965e+04	@0x342 high aperture null .1 PLC
+0006034a 000013c8                	.long	        5064	@0x34a underload dcv 100mV
+0006034e 000013c4                	.long	        5060	@0x34e underload dcv 1V
+00060352 000013c7                	.long	        5063	@0x352 underload dcv 10V
+00060356 000013c4                	.long	        5060	@0x356 underload dcv 100V
+0006035a 000013c7                	.long	        5063	@0x35a underload dcv 1000V
+0006035e 0000ed60                	.long	       60768	@0x35e overload dcv 100mV
+00060362 0000ed30                	.long	       60720	@0x362 overload dcv 1V
+00060366 0000ed54                	.long	       60756	@0x366 overload dcv 10V
+0006036a 0000ed30                	.long	       60720	@0x36a overload dcv 100V
+0006036e 0000ed54                	.long	       60756	@0x36e overtoad dcv 1000V
+00060372 0000138c                	.long	        5004	@0x372 underload ohm 10
+00060376 0000138d                	.long	        5005	@0x376 underload ohm 100
+0006037a 00001389                	.long	        5001	@0x37a underload ohm 1k
+0006037e 00001388                	.long	        5000	@0x37e underload ohm 10k
+00060382 000009c5                	.long	        2501	@0x382 underload ohm 100k
+00060386 000009c6                	.long	        2502	@0x386 underload ohm 1M
+0006038a 000009c5                	.long	        2501	@0x38a underload ohm 10M
+0006038e 000030dd                	.long	       12509	@0x38e underload ohm 100M
+00060392 000058d8                	.long	       22744	@0x392 underload ohm 1G
+00060396 0000ea90                	.long	       60048	@0x396 overload ohm 10
+0006039a 0000ea9c                	.long	       60060	@0x39a overload ohm 100
+0006039e 0000ea6c                	.long	       60012	@0x39e overload ohm 1k
+000603a2 0000ea60                	.long	       60000	@0x3a2 overload ohm 10k
+000603a6 0000753c                	.long	       30012	@0x3a6 overload ohm 100k
+000603aa 00007548                	.long	       30024	@0x3aa overload ohm 1M
+000603ae 0000753c                	.long	       30012	@0x3ae overload ohm 10M
+000603b2 00024a5c                	.long	      150108	@0x3b2 overload ohm 100M
+000603b6 00042a20                	.long	      272928	@0x3b6 overload ohm 1G
+000603ba 0000138c                	.long	        5004	@0x3ba underload ohm ocomp 10
+000603be 0000138d                	.long	        5005	@0x3be underload ohm ocomp 100
+000603c2 00001389                	.long	        5001	@0x3c2 underload ohm ocomp 1k
+000603c6 00001388                	.long	        5000	@0x3c6 underload ohm ocomp 10k
+000603ca 000009c5                	.long	        2501	@0x3ca underload ohm ocomp 100k
+000603ce 000009c6                	.long	        2502	@0x3ce underload ohm ocomp 1M
+000603d2 000009c5                	.long	        2501	@0x3d2 underload ohm ocomp 10M
+000603d6 000030dd                	.long	       12509	@0x3d6 underload ohm ocomp 100M
+000603da 000058d8                	.long	       22744	@0x3da underload ohm ocomp 1G
+000603de 0000ea90                	.long	       60048	@0x3de overload ohm ocomp 10
+000603e2 0000ea9c                	.long	       60060	@0x3e2 overload ohm ocomp 100
+000603e6 0000ea6c                	.long	       60012	@0x3e6 overload ohm ocomp 1k
+000603ea 0000ea60                	.long	       60000	@0x3ea overload ohm ocomp 10k
+000603ee 0000753c                	.long	       30012	@0x3ee overload ohm ocomp 100k
+000603f2 00007548                	.long	       30024	@0x3f2 overload ohm ocomp 1M
+000603f6 0000753c                	.long	       30012	@0x3f6 overload ohm ocomp 10M
+000603fa 00024a5c                	.long	      150108	@0x3fa overload ohm ocomp 100M
+000603fe 00042a20                	.long	      272928	@0x3fe overload ohm ocomp 1G
+00060402 00000114                	.long	         276	@0x402 underload dci 100nA
+00060406 0000010a                	.long	         266	@0x406 Cal_406
+0006040a 00000a6a                	.long	        2666	@0x40a Cal_40a
+0006040e 00000e7e                	.long	        3710	@0x40e Cal_40e
+00060412 000013cb                	.long	        5067	@0x412 Cal_412
+00060416 000013fa                	.long	        5114	@0x416 Cal_416
+0006041a 00000225                	.long	         549	@0x41a Cal_41a
+0006041e 000001cd                	.long	         461	@0x41e Cal_41e
+00060422 00000cf0                	.long	        3312	@0x422 overload dci 100nA
+00060426 00000c78                	.long	        3192	@0x426 Cal_426
+0006042a 00007cf8                	.long	       31992	@0x42a Cal_42a
+0006042e 0000ade8                	.long	       44520	@0x42e Cal_42e
+00060432 0000ed84                	.long	       60804	@0x432 Cal_432
+00060436 0000efb8                	.long	       61368	@0x436 Cal_436
+0006043a 000019bc                	.long	        6588	@0x43a Cal_43a
+0006043e 0000159c                	.long	        5532	@0x43e Cal_43e
+00060442 40440527ae21b385        	.double	4.004027344e+01	@0x442 acal dcv temperature
+0006044a 40440575371cb708        	.double	4.004263963e+01	@0x44a acal ohm temperature
+00060452 404404c54531e04c        	.double	4.003727021e+01	@0x452 acal acv temperature
+0006045a 82                      	.byte	        -126	@0x45a ac offset dac 10mV
+0006045b 83                      	.byte	        -125	@0x45b ac offset dac 100mV
+0006045c 82                      	.byte	        -126	@0x45c ac offset dac 1V
+0006045d 81                      	.byte	        -127	@0x45d ac offset dac 10V
+0006045e 83                      	.byte	        -125	@0x45e ac offset dac 100V
+0006045f 83                      	.byte	        -125	@0x45f ac offset dac 1KV
+00060460 82                      	.byte	        -126	@0x460 acdc offset dac 10mV
+00060461 83                      	.byte	        -125	@0x461 acdc offset dac 100mV
+00060462 82                      	.byte	        -126	@0x462 acdc offset dac 1V
+00060463 81                      	.byte	        -127	@0x463 acdc offset dac 10V
+00060464 83                      	.byte	        -125	@0x464 acdc offset dac 100V
+00060465 83                      	.byte	        -125	@0x465 acdc offset dac 1KV
+00060466 89                      	.byte	        -119	@0x466 acdci offset dac 100uA
+00060467 89                      	.byte	        -119	@0x467 acdci offset dac 1mA
+00060468 89                      	.byte	        -119	@0x468 acdci offset dac 10mA
+00060469 89                      	.byte	        -119	@0x469 acdci offset dac 100mA
+0006046a 89                      	.byte	        -119	@0x46a acdci offset dac 1A
+0006046b  > -- -- -- -- -- -- -- --  -- -- -- a0 -- -- -- --   ___________ ____
+0006046c 09f3                    	.word	        2547	@0x46c flatness dac 10mV
+0006046e 09ee                    	.word	        2542	@0x46e flatness dac 100mV
+00060470 05a5                    	.word	        1445	@0x470 flatness dac 1V
+00060472 0a70                    	.word	        2672	@0x472 flatness dac 10V
+00060474 0b48                    	.word	        2888	@0x474 flatness dac 100V
+00060476 0b4d                    	.word	        2893	@0x476 flatness dac 1KV
+00060478 80                      	.byte	        -128	@0x478 level dac dc 1.2V
+00060479  > -- -- -- -- -- -- -- --  -- a0 -- -- -- -- -- --   _________ ______
+0006047a 7e                      	.byte	         126	@0x47a level dac dc 12V
+0006047b  > -- -- -- -- -- -- -- --  -- -- -- a0 -- -- -- --   ___________ ____
+0006047c 7d                      	.byte	         125	@0x47c level dac ac 1.2V
+0006047d 7e                      	.byte	         126	@0x47d level dac ac 12V
+0006047e 7f                      	.byte	         127	@0x47e dcv trigger offset 100mV
+0006047f 7e                      	.byte	         126	@0x47f dcv trigger offset 1V
+00060480 7e                      	.byte	         126	@0x480 dcv trigger offset 10V
+00060481 7e                      	.byte	         126	@0x481 dcv trigger offset 100V
+00060482 7e                      	.byte	         126	@0x482 dcv trigger offset 1000V
+00060483  > -- -- -- a0 -- -- -- --  -- -- -- -- -- -- -- --   ___ ____________
+00060484 c08c0ed532617c1c        	.double	-8.978541000e+02	@0x484 acdcv sync offset 10mV
+0006048c c08e5772bd3c3611        	.double	-9.709310250e+02	@0x48c acdcv sync offset 100mV
+00060494 c08e6da64c2f837b        	.double	-9.737062000e+02	@0x494 acdcv sync offset 1V
+0006049c c08e2f05532617c2        	.double	-9.658776000e+02	@0x49c acdcv sync offset 10V
+000604a4 c08e7ce189374bc7        	.double	-9.756101250e+02	@0x4a4 acdcv sync offset 100V
+000604ac c08e676db8bac711        	.double	-9.729285750e+02	@0x4ac acdcv sync offset 1KV
+000604b4 c08c15a4816f0069        	.double	-8.987053250e+02	@0x4b4 acv sync offset 10mV
+000604bc c08e59dab9f559b4        	.double	-9.712318000e+02	@0x4bc acv sync offset 100mV
+000604c4 c08e825367a0f909        	.double	-9.762907250e+02	@0x4c4 acv sync offset 1V
+000604cc c08e34573eab367a        	.double	-9.665426000e+02	@0x4cc acv sync offset 10V
+000604d4 c08e8479c0ebedfa        	.double	-9.765594500e+02	@0x4d4 acv sync offset 100V
+000604dc c08e70bed288ce70        	.double	-9.740931750e+02	@0x4dc acv sync offset 1KV
+000604e4 3ebfcf93873671dd        	.double	1.896074107e-06	@0x4e4 acv sync gain 10mV
+000604ec 3ef49bb8893272f9        	.double	1.965359168e-05	@0x4ec acv sync gain 100mV
+000604f4 3f2a8369e0822d9b        	.double	2.022806877e-04	@0x4f4 acv sync gain 1V
+000604fc 3f5fef5e2724d425        	.double	1.949159571e-03	@0x4fc acv sync gain 10V
+00060504 3f93b85a1296b4bb        	.double	1.925793398e-02	@0x504 acv sync gain 100V
+0006050c 3fc8a2e4dedfae90        	.double	1.924711312e-01	@0x50c acv sync gain 1KV
+00060514 40d46f8232f22aab        	.double	2.092603436e+04	@0x514 ab ratio
+0006051c 4024bac2bba7bf38        	.double	1.036476695e+01	@0x51c gain ratio
+00060524 3efe9d73bdb291b4        	.double	2.919678432e-05	@0x524 acv ana gain 10mV
+0006052c 3f33d566e134877d        	.double	3.026367351e-04	@0x52c acv ana gain 100mV
+00060534 3f698444cd4d07e9        	.double	3.114828471e-03	@0x534 acv ana gain 1V
+0006053c 3f9ebc0c6d7ddbdb        	.double	3.001422327e-02	@0x53c acv ana gain 10V
+00060544 3fd2fa9472c77460        	.double	2.965441819e-01	@0x544 acv ana gain 100V
+0006054c 4007b5cff657c656        	.double	2.963775563e+00	@0x54c acv ana gain 1KV
+00060554 3f99b6bf8096d9b8        	.double	2.511119101e-02	@0x554 acv ana offset 10mV
+0006055c 3f99b6bf8096d9b8        	.double	2.511119101e-02	@0x55c acv ana offset 100mV
+00060564 3f99b6bf8096d9b8        	.double	2.511119101e-02	@0x564 acv ana offset 1V
+0006056c 3f99b6bf8096d9b8        	.double	2.511119101e-02	@0x56c acv ana offset 10V
+00060574 3f99b6bf8096d9b8        	.double	2.511119101e-02	@0x574 acv ana offset 100V
+0006057c 3f99b6bf8096d9b8        	.double	2.511119101e-02	@0x57c acv ana offset 1KV
+00060584 3ff06e1846b0689c        	.double	1.026878620e+00	@0x584 rmsdc ratio
+0006058c 3ff0013b8286a9e5        	.double	1.000300894e+00	@0x58c sampdc ratio
+00060594 3feffd60540f89f6        	.double	9.996797220e-01	@0x594 aci gain
+0006059c b241                    	.word	       45633	@0x59c Cal_Sum1
+0006059e 3fb9956bbd47c715        	.double	9.993623134e-02	@0x59e Cal_59e
+000605a6 3feffaf7c66cf761        	.double	9.993857265e-01	@0x5a6 Cal_5a6
+000605ae 400806557a9ef6a0        	.double	3.003092726e+00	@0x5ae Cal_5ae
+000605b6 3ff0001100066002        	.double	1.000016213e+00	@0x5b6 freq gain
+000605be 3d                      	.byte	          61	@0x5be attenuator high frequency dac
+000605bf  > -- -- -- -- -- -- -- --  -- -- -- -- -- -- -- a0   _______________ 
+000605c0 3e                      	.byte	          62	@0x5c0 amplifier high frequency dac 10mV
+000605c1 3e                      	.byte	          62	@0x5c1 amplifier high frequency dac 100mV
+000605c2 3e                      	.byte	          62	@0x5c2 amplifier high frequency dac 1V
+000605c3 4e                      	.byte	          78	@0x5c3 amplifier high frequency dac 10V
+000605c4 50                      	.byte	          80	@0x5c4 amplifier high frequency dac 100V
+000605c5 50                      	.byte	          80	@0x5c5 amplifier high frequency dac 1KV
+000605c6 09                      	.byte	           9	@0x5c6 interpolator
+000605c7  > -- -- -- -- -- -- -- a0  -- -- -- -- -- -- -- --   _______ ________
+000605c8 10bb                    	.word	        4283	@0x5c8 Cal_Sum2
+000605ca a0a0a0a0a0a0a0a0a0a0a0a0...	.asciiC	"                                                                                "
+0006061a 0000004d                	.long	          77	@0x61a Calnum
+0006061e 00000d82                	.long	        3458	@0x61e Cal_SecureCode
+00060622 00                      	.byte	           0	@0x622 Cal_AcalSecure
+00060623  > -- -- -- a0 -- -- -- --  -- -- -- -- -- -- -- --   ___ ____________
+00060624 337f                    	.word	       13183	@0x624 Cal_Sum3
+00060626 0000001b                	.long	          27	@0x626 Destructive Overloads
+0006062a 00000000                	.long	           0	@0x62a Defeats
+0006062e  .fill 0xa0 [0xea]
+00060718  .fill 0x1 [0x30]
+00060748  > -- -- -- -- -- -- -- --  11 11 11 11 11 10 10 70   ________       p
+00060750  .fill 0x1 [0x27]
+00060777  > -- -- -- -- -- -- -- 07  04 04 04 04 04 04 04 04   _______         
+00060780  > 04 44 44 44 44 44 44 44  44 44 44 44 44 44 44 44    DDDDDDDDDDDDDDD
+00060790  > 44 44 44 44 44 44 44 44  44 44 44 44 44 44 44 44   DDDDDDDDDDDDDDDD
+000607a0  > 04 04 04 fc ff 57 55 f5  17 -- -- -- -- -- -- --        WU  _______
+000607a9  .fill 0x10 [0x22]
+000607cb  > -- -- -- -- -- -- -- --  -- -- -- 70 40 40 40 40   ___________p@@@@
+000607d0  > 7f 01 00 00 00 00 00 00  00 00 00 44 f4 a4 -- --              D  __
+000607de  .fill 0xa0 [0x21]
+--------------------------------------------------
