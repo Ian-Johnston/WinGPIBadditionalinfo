@@ -1,3 +1,8 @@
+R6581T E5810A = GPIB1::24::INSTR
+R6581T ProSerial = 24:COM42:115200
+
+kΩ
+
 Here are some helpful hints n tips for various test instruments and how to communicate with them
 [any GPIB/Comms addresses detailed are examples only]
 
@@ -8,7 +13,8 @@ GPIBDevice_NINET 	- NI boards
 GPIBDevice_ADLink 	- ADLink boards
 GPIBDevice_gpib488 	- Keithley, MCC and older NI boards
 VisaDevice 		- Generic interface (GPIB,USB etc.) via Visa
-SerialDevice 		- Serial ports
+COM Port 		- Generic serial ports
+Prologix		- Prologix USB and Ethernet
 
 ################################################################################################
 
@@ -43,6 +49,13 @@ Default PDVS2mini tab defaults:
 	Soak = 168hrs
 	DC Inp. = OK
 	Chg/Dis. = OK
+	
+3458A CalRam/Settings Pre-Run Commands:
+	END ALWAYS
+	NPLC 0
+	NRDGS 1
+	TRIG HOLD
+	QFORMAT NUM
 
 ################################################################################################
 
@@ -63,16 +76,29 @@ WinGPIB V3.178 onwards:
 ################################################################################################
 
 Formulating the Address:
-GPIB:		GPIB[board]::address::INSTR
-Example:	GPIB1::22::INSTR
+GPIB:			GPIB[board]::address::INSTR
+Example:		GPIB1::22::INSTR
 
-USB:		USB[board]::manufacturer ID::model code::serial number::INSTR
+USB:			USB[board]::manufacturer ID::model code::serial number::INSTR
+Example:		USB0::0x2A8D::0x1301::MY12345678::INSTR
 
-TCPIP:		TCPIP[board]::IP address[::LAN device name]::INSTR
-Example:	TCPIP0::192.168.1.139::inst0::INSTR
+TCPIP:			TCPIP[board]::IP address[::LAN device name]::INSTR
+Example:		TCPIP0::192.168.1.139::inst0::INSTR
 
-Serial:		COMport,baud,parity,databits,stopbits [,newline]
-Example:	COM4:115200,N,8,1,CRLF
+Serial:			COMport,baud,parity,databits,stopbits [,newline]
+Example:		COM4:115200,N,8,1,CRLF
+
+Prologix Serial:	address:COM[port number]:[baud]
+Example:		5:COM7:115200
+Note: No drivers etc are required.
+
+Prologix Ethernet:	address:[IP Address]:[Port]
+Example:		5:192.168.1.208:1234
+Note: Use Prologix netfinder.exe app to set IP address etc. No drivers etc are required.
+
+NI-GPIB-232CT-A Serial:		address:COM[port number]:[baud]
+Example:	22:COM9:9600
+Note: No drivers etc are required.
 
 ################################################################################################
 
@@ -367,6 +393,9 @@ APPLY ACV 3.0		Output sine wave 3.0Vac peak to peak
 APPLY SQV 3.0		Output square wave 3.0Vac peak to peak
 DUTY 30			Set 30% duty cycle
 APPLY RPV 3.0		Output ramp value 3Vdc peak to peak
+RANGE 0.0001		Example DCI mode (resolution 0.1nA) (others = 0.0001A, 0.001A, 0.01A, 0.1A)
+RANGE 1			Max output. Example DCV mode range set (resolution 1uV)
+RANGE 10		Max output. Example DCV mode range set (resolution 10uV)
 
 NOTES:
 If you measure the RMS value on a 3458A it will be 1.0608 Vac RMS since Vrms = Vpp/2.828 for a sine wave
@@ -580,3 +609,21 @@ Reading back data (QUERY ASYNC):
 
 
 ################################################################################
+
+Advantest R6581T 8.5 Digit DMM
+
+GPIB1::24::INSTR
+Enable Polling
+
+*RST					Reset
+READ?					Read
+:CONF:VOLT:DC			Configure DCV mode
+:SENS:VOLT:DC:RANG 10	10VDC range
+:SENS:VOLT:DC:RANG 1	1000mV range
+:VOLT:DC:DIG MAX		Set number of digits to max 8.5
+:VOLT:DC:NPLC 30		VDC mode NPLC
+:SENS:FRES:NPLC 100		Resistance mode NPLC 100
+
+
+
+
