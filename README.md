@@ -1,4 +1,4 @@
-These are supporting files & info for WinGPIB.
+WinGPIB - Supporting files & info.
 
 Installation .MSI for WinGPIB is located here:
 \WinGPIBadditionalinfo\WinGPIB-AnyCPU_All-SetupFiles
