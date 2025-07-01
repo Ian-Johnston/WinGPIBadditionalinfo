@@ -1,8 +1,3 @@
-R6581T E5810A = GPIB1::24::INSTR
-R6581T ProSerial = 24:COM42:115200
-
-kΩ
-
 Here are some helpful hints n tips for various test instruments and how to communicate with them
 [any GPIB/Comms addresses detailed are examples only]
 
@@ -15,6 +10,8 @@ GPIBDevice_gpib488 	- Keithley, MCC and older NI boards
 VisaDevice 		- Generic interface (GPIB,USB etc.) via Visa
 COM Port 		- Generic serial ports
 Prologix		- Prologix USB and Ethernet
+NI-GPIB-232CT-A	- Serial
+Kofen's PoE Ethernet - Prologix compatible
 
 ################################################################################################
 
@@ -88,7 +85,7 @@ Example:		TCPIP0::192.168.1.139::inst0::INSTR
 Serial:			COMport,baud,parity,databits,stopbits [,newline]
 Example:		COM4:115200,N,8,1,CRLF
 
-Prologix Serial:	address:COM[port number]:[baud]
+Prologix Serial:	GPIBaddress:COM[port number]:[baud]
 Example:		5:COM7:115200
 Note: No drivers etc are required.
 
@@ -99,6 +96,26 @@ Note: Use Prologix netfinder.exe app to set IP address etc. No drivers etc are r
 NI-GPIB-232CT-A Serial:		address:COM[port number]:[baud]
 Example:	22:COM9:9600
 Note: No drivers etc are required.
+
+Kofen's PoE Ethernet GPIB adaptor:
+Prologix Ethernet:	address:[IP Address]:[Port]
+Example:		5:192.168.1.208:1234
+
+################################################################################################
+
+NOTES:
+AR488v3 Arduino Pro Micro version should report as 'Arduino Leonardo' in Windows
+AR488 Arduino Nano version should report as 'USB-SERIAL CH340' in Windows
+
+Arithmetic:
+Use this text entry to apply an arithmetic function on the incoming data. Examples:
+/1000
+*1.2
+-100
++25.5
+
+Symbols:
+kΩ
 
 ################################################################################################
 
@@ -624,6 +641,8 @@ READ?					Read
 :VOLT:DC:NPLC 30		VDC mode NPLC
 :SENS:FRES:NPLC 100		Resistance mode NPLC 100
 
+R6581T E5810A = GPIB1::24::INSTR
+R6581T ProSerial = 24:COM42:115200
 
 
 
