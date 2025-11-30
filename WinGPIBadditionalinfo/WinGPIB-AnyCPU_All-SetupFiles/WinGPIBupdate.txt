@@ -1,2 +1,2 @@
-version=3.285
-notes=Version update pop-up now gives info on new functionality/fixes.
+version=3.288
+notes=Live Chart - Live Chart Visible Chart hrs counter bugfix
