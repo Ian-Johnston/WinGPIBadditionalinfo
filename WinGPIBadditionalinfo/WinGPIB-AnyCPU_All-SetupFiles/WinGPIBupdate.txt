@@ -1,2 +1,2 @@
-version=3.288
-notes=Live Chart - Live Chart Visible Chart hrs counter bugfix
+version=4.002
+notes=New User tab added for custom controls.
