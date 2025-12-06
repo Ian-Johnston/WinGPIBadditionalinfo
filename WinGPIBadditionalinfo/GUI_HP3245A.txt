@@ -1,0 +1,38 @@
+; ========================================
+;    HP / Agilent 3245A Custom Controls
+; ========================================
+;
+; By Ian Johnston 06/12/25
+;
+; Format of controls:
+; BUTTON;Caption;Action;DeviceName;CommandPrefix;ValueControl;ResultControl;X;Y;Width;Height
+; TEXTBOX;Name;LabelText;X;Y;Width;Height
+;
+
+GROUPBOX;HP 3245A Universal Source Controls
+
+
+BUTTON;DC 5V;SEND;dev2;APPLY DCV 5;;;600;20;120;80
+
+BUTTON;Set DCV;SENDVALUE;dev2;APPLY DCV, ;TextBoxSetDCV;;20;20;120;40
+TEXTBOX;TextBoxSetDCV;Set:;180;30
+
+BUTTON;Set ACV;SENDVALUE;dev2;APPLY ACV, ;TextBoxSetACV;;20;60;120;40
+TEXTBOX;TextBoxSetACV;Set:;180;74
+
+BUTTON;Set Frequency;SENDVALUE;dev2;FREQ, ;TextBoxSetFreq;;20;100;120;40
+TEXTBOX;TextBoxSetFreq;Set:;180;114
+
+BUTTON;Square Wave;SENDVALUE;dev2;APPLY SQV, ;TextBoxSetSQV;;20;140;120;40
+TEXTBOX;TextBoxSetSQV;Set:;180;154
+
+BUTTON;Ramp Wave;SENDVALUE;dev2;APPLY RPV, ;TextBoxSetRPV;;20;180;120;40
+TEXTBOX;TextBoxSetRPV;Set:;180;194
+
+BUTTON;High Resolution;SEND;dev2;DCRES HIGH;;;20;230;120;40
+BUTTON;Low Resolution;SEND;dev2;DCRES LOW;;;20;270;120;40
+BUTTON;Reset 3245A;SEND;dev2;RST;;;20;320;120;40
+
+
+BUTTON;Current Channel;QUERY;dev2;USE?;;TextBoxResult;20;430;120;40
+TEXTBOX;TextBoxResult;Result:;160;440
