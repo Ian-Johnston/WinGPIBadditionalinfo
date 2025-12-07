@@ -1,2 +1,2 @@
-version=4.002
-notes=New User tab added for custom controls.
+version=4.003
+notes=More custom controls added for use in the USER tab.
