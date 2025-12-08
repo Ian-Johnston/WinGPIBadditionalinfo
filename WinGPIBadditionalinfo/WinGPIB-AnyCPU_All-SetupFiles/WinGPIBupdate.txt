@@ -1,2 +1,2 @@
-version=4.005
-notes=User custom controls updated SPINNER & TEXTBOX. See the instructions.
+version=4.006
+notes=More USER tab controls added. See the instructions.
