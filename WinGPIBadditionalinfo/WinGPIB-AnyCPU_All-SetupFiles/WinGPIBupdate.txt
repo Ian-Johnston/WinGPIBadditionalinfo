@@ -1,2 +1,2 @@
-version=4.007
-notes=CHART function added to the USER tab controls added. See the instructions.
+version=4.009
+notes=Bugfix in new USER tab, issue when using high NPLC and low refresh rate checkbox.
