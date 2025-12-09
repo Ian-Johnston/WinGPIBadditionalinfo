@@ -1,2 +1,2 @@
-version=4.010
-notes=CHART on the USER tab now has ability to auto-scale the y-axis, see instructions.
+version=4.011
+notes=Various bugfixes on USER tab functions and added lineweight option & Reset button for CHART, see instructions.
