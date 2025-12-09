@@ -1,2 +1,2 @@
-version=4.011
-notes=Various bugfixes on USER tab functions and added lineweight option & Reset button for CHART, see instructions.
+version=4.013
+notes=Live Chart and USER Chart fix so that chart scrolls in from the right properly
