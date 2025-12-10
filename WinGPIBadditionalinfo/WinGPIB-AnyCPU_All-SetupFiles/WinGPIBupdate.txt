@@ -1,2 +1,2 @@
-version=4.014
-notes=Added scale command to USER tab radio buttons, see instructions
+version=4.015
+notes=Added optional 'units' to BIGTEXT param in the USER tab
