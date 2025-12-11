@@ -1,2 +1,2 @@
-version=4.015
-notes=Added optional 'units' to BIGTEXT param in the USER tab
+version=4.017
+notes=Added new parameter to DROPDOWN on USER tab
