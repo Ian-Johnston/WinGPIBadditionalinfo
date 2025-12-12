@@ -1,2 +1,2 @@
-version=4.017
-notes=Added new parameter to DROPDOWN on USER tab
+version=4.019
+notes=User tab: native/standalone GPIB engine dev1/dev2 configurable. Added controls to script GPIB commands to your instrument.
