@@ -1,2 +1,2 @@
-version=4.021
-notes=User tab: Added ability on the CHART to set the inner dimensions of the chart
+version=4.022
+notes=User tab: Added a STATS panel.
