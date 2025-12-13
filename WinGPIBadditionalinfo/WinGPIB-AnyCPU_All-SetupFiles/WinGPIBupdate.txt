@@ -1,2 +1,2 @@
-version=4.020
-notes=User tab: fixed issue where the GUI glitches if there's a lot of controls on the tab.
+version=4.021
+notes=User tab: Added ability on the CHART to set the inner dimensions of the chart
