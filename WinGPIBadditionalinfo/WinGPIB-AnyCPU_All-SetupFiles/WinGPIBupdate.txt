@@ -1,2 +1,2 @@
-version=4.022
-notes=User tab: Added a STATS panel.
+version=4.023
+notes=User tab: Modified available DP's on STATS panel.
