@@ -1,2 +1,2 @@
-version=4.019
-notes=User tab: native/standalone GPIB engine dev1/dev2 configurable. Added controls to script GPIB commands to your instrument.
+version=4.020
+notes=User tab: fixed issue where the GUI glitches if there's a lot of controls on the tab.
