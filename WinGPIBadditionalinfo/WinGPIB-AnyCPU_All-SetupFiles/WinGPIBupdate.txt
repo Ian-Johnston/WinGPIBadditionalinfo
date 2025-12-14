@@ -1,2 +1,2 @@
-version=4.025
-notes=User tab: Added invisibility control
+version=4.026
+notes=User tab: Fix flicker issue on history panel.
