@@ -1,2 +1,2 @@
-version=4.023
-notes=User tab: Modified available DP's on STATS panel.
+version=4.025
+notes=User tab: Added invisibility control
