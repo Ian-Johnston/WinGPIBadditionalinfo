@@ -1,2 +1,2 @@
-version=4.027
-notes=User tab: Added full 'named' config file entries
+version=4.029
+notes=User tab: Added reset button to HistoryGrid
