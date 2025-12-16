@@ -1,2 +1,2 @@
-version=4.029
-notes=User tab: Added reset button to HistoryGrid
+version=4.030
+notes=User tab: Updated Trigger function to support cascading events
