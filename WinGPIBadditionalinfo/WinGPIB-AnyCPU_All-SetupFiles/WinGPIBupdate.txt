@@ -1,2 +1,2 @@
-version=4.030
-notes=User tab: Updated Trigger function to support cascading events
+version=4.031
+notes=User tab: LUA user scripting implemented
