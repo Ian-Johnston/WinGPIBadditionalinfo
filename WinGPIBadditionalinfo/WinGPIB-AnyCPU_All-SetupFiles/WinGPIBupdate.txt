@@ -1,2 +1,2 @@
-version=4.034
-notes=User tab: Tidy code and demo config files, added info to empty USER tab
+version=4.035
+notes=User tab: New DATASOURCE function in the config file makes linking parameters easier. See new V2 guide and updates config file demos.
