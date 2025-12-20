@@ -1,2 +1,2 @@
-version=4.036
-notes=User tab: New CALC function, fixed FORMAT issue with BIGTEXT, added defaults for INVISIBILITY
+version=4.037
+notes=User tab: Extended TRIGGER functionality
