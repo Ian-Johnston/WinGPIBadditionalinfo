@@ -1,2 +1,2 @@
-version=4.037
-notes=User tab: Extended TRIGGER functionality
+version=4.039
+notes=User tab: New function, detect overrange and display OVERRIDE
