@@ -1,2 +1,2 @@
-version=4.039
-notes=User tab: New function, detect overrange and display OVERRIDE
+version=4.040
+notes=User tab: Checkbox can now apply to multiple targets
