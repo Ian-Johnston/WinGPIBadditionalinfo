@@ -1,2 +1,2 @@
-version=4.040
-notes=User tab: Checkbox can now apply to multiple targets
+version=4.041
+notes=User tab: Config file entries multi-line allowed, determine parameter added to sync controls
