@@ -1,2 +1,2 @@
-version=4.043
-notes=User tab: Config file entries multi-line allowed, determine parameter added to sync controls, inhibit config file loading if dev1/dev2 are not connected, fixed issue with Config File Open button logic
+version=4.044
+notes=User tab: Config file entries multi-line allowed, determine parameter added to sync controls, inhibit config file loading if dev1/dev2 are not connected, fixed issue with Config File Open button logic, added DETERMINE to TOGGLE and added a new control TOGGLEDUAL
