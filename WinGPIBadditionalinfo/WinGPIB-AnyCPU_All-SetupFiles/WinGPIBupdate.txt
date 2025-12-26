@@ -1,2 +1,2 @@
-version=4.045
-notes=User tab: Added 2 new controls, MULTIBUTTON and KEYPAD
+version=4.46
+notes=User tab: STATS panel, user can now set ref value on User tab
