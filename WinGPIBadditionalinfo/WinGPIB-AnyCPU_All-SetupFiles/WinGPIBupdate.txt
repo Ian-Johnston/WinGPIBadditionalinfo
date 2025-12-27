@@ -1,2 +1,10 @@
-version=4.46
-notes=User tab: STATS panel, user can now set ref value on User tab
+version=4.47
+notes=User tab:
+Added REFRESH button to the User tab
+Added automatic SAVE to all TEXTBOX's
+Added dp parameter to RADIO
+Added pop-up during config initialisation
+Added STATS panel PPM Def Reference
+Extended functionality of DROPDOWN
+Bugfix issues with BIGTEXT units, CALC, RADIO & various others
+New demo config file added for 34461A/65A/70A DMM
