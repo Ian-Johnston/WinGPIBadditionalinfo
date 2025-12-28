@@ -1,5 +1,12 @@
-version=4.48
+version=4.49
 notes=User tab:
+Added CHART and HISTORYGRID can now be made a separate popup
+Added DATASOURCE parameter decimal added
+Added Config file 'result' parameter conformity check on load
+Updated demo config files
+Bugfix issues with decimal/scientific notation readouts
+Bugfix various other issues
+4.48 updates were:
 Bugfix single READ button broke at 4.47
 4.47 updates were:
 Added REFRESH button to the User tab
