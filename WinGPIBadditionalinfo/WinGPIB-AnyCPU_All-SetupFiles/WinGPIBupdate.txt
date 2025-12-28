@@ -1,5 +1,7 @@
-version=4.47
+version=4.48
 notes=User tab:
+Bugfix single READ button broke at 4.47
+4.47 updates were:
 Added REFRESH button to the User tab
 Added automatic SAVE to all TEXTBOX's
 Added dp parameter to RADIO
