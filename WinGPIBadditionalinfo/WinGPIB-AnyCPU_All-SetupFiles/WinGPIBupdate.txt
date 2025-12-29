@@ -1,22 +1,26 @@
-VERSION=4.50
+VERSION=4.51
 USER TAB UPDATES:
-Added - labelsize parameter to CHART in config
-Bugfix - previous update broke LUA!
+Added - New BOOTCOMMANDS function to initialize instrument
+Bugfix - Config file allow use of double semi-colon for in-line comments
+Updated - Demo config files, including new for K2001 DMM
+4.50 updates were:
+Added - Labelsize parameter to CHART in config
+Bugfix - Previous update broke LUA!
 4.49 updates were:
 Added - CHART and HISTORYGRID can now be made a separate popup
 Added - DATASOURCE parameter decimal added
 Added - Config file 'result' parameter conformity check on load
-Updated - demo config files
-Bugfix - issues with decimal/scientific notation readouts
-Bugfix - various other issues
+Updated - Demo config files
+Bugfix - Issues with decimal/scientific notation readouts
+Bugfix - Various other issues
 4.48 updates were:
-Bugfix - single READ button broke at 4.47
+Bugfix - Single READ button broke at 4.47
 4.47 updates were:
 Added - REFRESH button to the User tab
-Added - automatic SAVE to all TEXTBOX's
-Added - dp parameter to RADIO
-Added - pop-up during config initialisation
+Added - Automatic SAVE to all TEXTBOX's
+Added - 'dp' parameter to RADIO
+Added - Pop-up during config initialisation
 Added - STATS panel PPM Def Reference
-Extended - functionality of DROPDOWN
-Bugfix - issues with BIGTEXT units, CALC, RADIO & various others
-New - demo config file added for 34461A/65A/70A DMM
+Extended - Functionality of DROPDOWN
+Bugfix - Issues with BIGTEXT units, CALC, RADIO & various others
+New - Demo config file added for 34461A/65A/70A DMM
