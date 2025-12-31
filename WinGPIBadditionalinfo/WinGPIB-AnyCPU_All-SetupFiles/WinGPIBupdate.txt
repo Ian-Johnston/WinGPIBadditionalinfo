@@ -1,7 +1,9 @@
 VERSION=4.54
 USER TAB UPDATES:
+Added - Ability to add a delay between bootcommands
 Bugfix - Double semi-colons for comments had issue
 Bugfix - K2001 config file, much better operation
+Updated - User Guide
 4.53 updates were:
 DROPDOWN command supports multiple commands
 Updated - Demo config files
