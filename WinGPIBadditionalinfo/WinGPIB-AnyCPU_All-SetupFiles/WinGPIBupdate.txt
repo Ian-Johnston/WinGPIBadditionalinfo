@@ -1,5 +1,8 @@
-VERSION=4.53
+VERSION=4.54
 USER TAB UPDATES:
+Bugfix - Double semi-colons for comments had issue
+Bugfix - K2001 config file, much better operation
+4.53 updates were:
 DROPDOWN command supports multiple commands
 Updated - Demo config files
 4.52 updates were:
