@@ -1,5 +1,7 @@
-VERSION=4.56
+VERSION=4.57
 USER TAB UPDATES:
+Added - Config file editor built into WinGPIB
+4.56 updates were:
 Added - STATSPANEL can now specify font size & rel. col positions in config
 4.55 updates were:
 Added - New feature, Multiple Sub-tabs
