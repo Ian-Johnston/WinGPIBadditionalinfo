@@ -1,5 +1,7 @@
-VERSION=4.55
+VERSION=4.56
 USER TAB UPDATES:
+Added - STATSPANEL can now specify font size & rel. col positions in config
+4.55 updates were:
 Added - New feature, Multiple Sub-tabs
 Updated - User Guide & new config file
 4.54 updates were:
