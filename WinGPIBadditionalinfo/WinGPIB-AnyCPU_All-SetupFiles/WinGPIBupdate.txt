@@ -1,5 +1,7 @@
-VERSION=4.58
+VERSION=4.59
 USER TAB UPDATES:
+Updated - Config file editor syntax colouring
+4.58 updates were:
 Updated - Config file editor updates and fixes
 4.57 updates were:
 Added - Config file editor built into WinGPIB
