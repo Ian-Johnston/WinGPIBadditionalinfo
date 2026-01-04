@@ -1,5 +1,7 @@
-VERSION=4.61
+VERSION=4.62
+Updated - User tab config editor fix TAB key
 USER TAB UPDATES:
+4.61 updates were:
 Bugfix - AUTO mode CALC issue fixed
 4.60 updates were:
 Bugfix - AUTO mode on DMM's fixed
