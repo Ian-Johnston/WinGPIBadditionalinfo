@@ -1,5 +1,11 @@
-VERSION=4.59
+VERSION=4.61
 USER TAB UPDATES:
+Bugfix - AUTO mode CALC issue fixed
+4.60 updates were:
+Bugfix - AUTO mode on DMM's fixed
+Updated - All the demo config files
+Updated - Big review of the PDF Guide
+4.59 updates were:
 Updated - Config file editor syntax colouring
 4.58 updates were:
 Updated - Config file editor updates and fixes
