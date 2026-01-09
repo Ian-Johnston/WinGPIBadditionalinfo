@@ -1,4 +1,6 @@
-VERSION=4.64
+VERSION=4.65
+Bugfix - User tab config editor mouse caret position fix
+4.64 updates were:
 Added - SETTINGS tab, Prologix Serial DTR Enable Checkbox
 Added - SETTINGS tab, IODevices window move with main window Checkbox
 Updated - New param added to CALC & bugfix
