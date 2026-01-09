@@ -1,5 +1,10 @@
-VERSION=4.63
-USER TAB UPDATES:
+VERSION=4.64
+Added - SETTINGS tab, Prologix Serial DTR Enable Checkbox
+Added - SETTINGS tab, IODevices window move with main window Checkbox
+Updated - New param added to CALC & bugfix
+Updated - Refresh button now brings up initialisation pop-up
+Bugfix - Various
+4.63 updates were:
 Bugfix - User tab Refresh button
 4.62 updates were:
 Updated - User tab config editor fix TAB key
