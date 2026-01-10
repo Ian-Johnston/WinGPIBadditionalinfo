@@ -1,4 +1,6 @@
-VERSION=4.65
+VERSION=4.66
+Updated - Config Editor now validates syntax colour coding on ENTER
+4.65 updates were:
 Bugfix - User tab config editor mouse caret position fix
 4.64 updates were:
 Added - SETTINGS tab, Prologix Serial DTR Enable Checkbox
