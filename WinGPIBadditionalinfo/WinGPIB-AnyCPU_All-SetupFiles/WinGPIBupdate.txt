@@ -1,4 +1,7 @@
-VERSION=4.67
+VERSION=4.68
+Added - User tab 2nd BIGTEXT as a popup
+Bugfix - User tab RESET button
+4.67 updates were:
 Bugfix - User tab editor Block list line numbers issue
 4.66 updates were:
 Updated - Config Editor now validates syntax colour coding on ENTER
