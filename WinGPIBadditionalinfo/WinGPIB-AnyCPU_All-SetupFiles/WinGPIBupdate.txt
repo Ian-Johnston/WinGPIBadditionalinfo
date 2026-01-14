@@ -1,4 +1,7 @@
-VERSION=4.68
+VERSION=4.69
+Updated - 4 more profiles per device (12ea)
+Added - Pulldown for profile selection
+4.68 updates were:
 Added - User tab 2nd BIGTEXT as a popup
 Bugfix - User tab RESET button
 4.67 updates were:
