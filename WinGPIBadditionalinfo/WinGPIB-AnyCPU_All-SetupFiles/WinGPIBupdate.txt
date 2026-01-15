@@ -1,4 +1,7 @@
-VERSION=4.69
+VERSION=4.70
+Updated - Removed profile checkboxes and added more profile slots (40 total)
+Updated - LUA scripting engine now supports polynomials
+4.69 updates were:
 Updated - 4 more profiles per device (12ea)
 Added - Pulldown for profile selection
 4.68 updates were:
