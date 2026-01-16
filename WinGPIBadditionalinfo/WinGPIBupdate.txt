@@ -1,2 +1,83 @@
-version=4.001
-notes=New User tab added for custom controls.
+VERSION=4.72
+Updated - Device dropdowns index No. added
+4.71 updates were:
+Bugfix - App slow to run and some settings not saved properly
+4.70 updates were:
+Updated - Removed profile checkboxes and added more profile slots (40 total)
+Updated - LUA scripting engine now supports polynomials
+4.69 updates were:
+Updated - 4 more profiles per device (12ea)
+Added - Pulldown for profile selection
+4.68 updates were:
+Added - User tab 2nd BIGTEXT as a popup
+Bugfix - User tab RESET button
+4.67 updates were:
+Bugfix - User tab editor Block list line numbers issue
+4.66 updates were:
+Updated - Config Editor now validates syntax colour coding on ENTER
+4.65 updates were:
+Bugfix - User tab config editor mouse caret position fix
+4.64 updates were:
+Added - SETTINGS tab, Prologix Serial DTR Enable Checkbox
+Added - SETTINGS tab, IODevices window move with main window Checkbox
+Updated - New param added to CALC & bugfix
+Updated - Refresh button now brings up initialisation pop-up
+Bugfix - Various
+4.63 updates were:
+Bugfix - User tab Refresh button
+4.62 updates were:
+Updated - User tab config editor fix TAB key
+4.61 updates were:
+Bugfix - AUTO mode CALC issue fixed
+4.60 updates were:
+Bugfix - AUTO mode on DMM's fixed
+Updated - All the demo config files
+Updated - Big review of the PDF Guide
+4.59 updates were:
+Updated - Config file editor syntax colouring
+4.58 updates were:
+Updated - Config file editor updates and fixes
+4.57 updates were:
+Added - Config file editor built into WinGPIB
+4.56 updates were:
+Added - STATSPANEL can now specify font size & rel. col positions in config
+4.55 updates were:
+Added - New feature, Multiple Sub-tabs
+Updated - User Guide & new config file
+4.54 updates were:
+Added - Ability to add a delay between bootcommands
+Bugfix - Double semi-colons for comments had issue
+Bugfix - K2001 config file, much better operation
+Updated - User Guide
+4.53 updates were:
+DROPDOWN command supports multiple commands
+Updated - Demo config files
+4.52 updates were:
+Bugfix - Added full locale-safe numeric handling
+Bugfix - CSV logging some instruments added extra data not required
+4.51 updates were:
+USER TAB UPDATES:
+Added - New BOOTCOMMANDS function to initialize instrument
+Bugfix - Config file allow use of double semi-colon for in-line comments
+Updated - Demo config files, including new for K2001 DMM
+4.50 updates were:
+Added - Labelsize parameter to CHART in config
+Bugfix - Previous update broke LUA!
+4.49 updates were:
+Added - CHART and HISTORYGRID can now be made a separate popup
+Added - DATASOURCE parameter decimal added
+Added - Config file 'result' parameter conformity check on load
+Updated - Demo config files
+Bugfix - Issues with decimal/scientific notation readouts
+Bugfix - Various other issues
+4.48 updates were:
+Bugfix - Single READ button broke at 4.47
+4.47 updates were:
+Added - REFRESH button to the User tab
+Added - Automatic SAVE to all TEXTBOX's
+Added - 'dp' parameter to RADIO
+Added - Pop-up during config initialisation
+Added - STATS panel PPM Def Reference
+Extended - Functionality of DROPDOWN
+Bugfix - Issues with BIGTEXT units, CALC, RADIO & various others
+New - Demo config file added for 34461A/65A/70A DMM
