@@ -1,4 +1,8 @@
-VERSION=4.71
+VERSION=4.73
+Added - Profile slots can now be moved & copied
+4.72 updates were:
+Updated - Device dropdowns index No. added
+4.71 updates were:
 Bugfix - App slow to run and some settings not saved properly
 4.70 updates were:
 Updated - Removed profile checkboxes and added more profile slots (40 total)
