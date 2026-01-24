@@ -1,4 +1,6 @@
-VERSION=4.73
+VERSION=4.74
+Added - Additional dev1/dev2 commands to profile saves
+4.73 updates were:
 Added - Profile slots can now be moved & copied
 4.72 updates were:
 Updated - Device dropdowns index No. added
