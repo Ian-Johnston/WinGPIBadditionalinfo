@@ -1,4 +1,7 @@
-VERSION=4.74
+VERSION=4.75
+Added - HP3478A CalRam Backup/Restore
+Updated - USER tab RUN/STOP button added
+4.74 updates were:
 Added - Additional dev1/dev2 commands to profile saves
 4.73 updates were:
 Added - Profile slots can now be moved & copied
