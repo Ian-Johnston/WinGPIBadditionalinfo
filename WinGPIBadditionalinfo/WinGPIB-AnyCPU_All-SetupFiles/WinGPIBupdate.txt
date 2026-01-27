@@ -1,4 +1,6 @@
-VERSION=4.78
+VERSION=4.79
+Update - Win11 blue hover on buttons
+4.78 updates were:
 BugFix - Win11 themem fix
 Added - 3478A Userguide button
 4.77 updates were:
