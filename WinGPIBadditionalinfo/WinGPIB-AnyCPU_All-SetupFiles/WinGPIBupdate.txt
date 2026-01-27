@@ -1,4 +1,7 @@
-VERSION=4.76
+VERSION=4.77
+Added - Win11 theme fix (selectable)
+BugFix - 3478A crash on S/N change
+4.76 updates were:
 BugFix - User tab folder location/names
 BugFix - 3478A tab controls visibility issue
 4.75 updates were:
