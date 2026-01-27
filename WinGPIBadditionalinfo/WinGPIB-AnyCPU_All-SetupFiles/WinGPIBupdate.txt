@@ -1,4 +1,7 @@
-VERSION=4.75
+VERSION=4.76
+BugFix - User tab folder location/names
+BugFix - 3478A tab controls visibility issue
+4.75 updates were:
 Added - HP3478A CalRam Backup/Restore
 Updated - USER tab RUN/STOP button added
 4.74 updates were:
