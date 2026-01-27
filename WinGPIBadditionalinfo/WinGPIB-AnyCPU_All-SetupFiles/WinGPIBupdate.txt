@@ -1,4 +1,7 @@
-VERSION=4.77
+VERSION=4.78
+BugFix - Win11 themem fix
+Added - 3478A Userguide button
+4.77 updates were:
 Added - Win11 theme fix (selectable)
 BugFix - 3478A crash on S/N change
 4.76 updates were:
