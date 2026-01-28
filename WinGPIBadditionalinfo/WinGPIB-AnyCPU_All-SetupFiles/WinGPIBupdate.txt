@@ -1,4 +1,7 @@
-VERSION=4.80
+VERSION=4.81
+Bugfix - Dev1 REGEX checkbox had a bug
+Bugfix - Query Async text responses checkbox status wasn't being saved
+4.80 updates were:
 BugFix - Settings tab GUI fix
 4.79 updates were:
 Update - Win11 blue hover on buttons
