@@ -1,4 +1,6 @@
-VERSION=4.79
+VERSION=4.80
+BugFix - Settings tab GUI fix
+4.79 updates were:
 Update - Win11 blue hover on buttons
 4.78 updates were:
 BugFix - Win11 themem fix
