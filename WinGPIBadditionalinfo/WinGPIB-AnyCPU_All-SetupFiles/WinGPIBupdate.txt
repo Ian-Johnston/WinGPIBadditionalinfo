@@ -1,4 +1,6 @@
-VERSION=4.81
+VERSION=4.82
+Bugfix - Win11 theme fix various small button sizes
+4.81 updates were:
 Bugfix - Dev1 REGEX checkbox had a bug
 Bugfix - Query Async text responses checkbox status wasn't being saved
 4.80 updates were:
