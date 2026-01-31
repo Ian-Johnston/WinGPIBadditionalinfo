@@ -1,4 +1,7 @@
-VERSION=4.82
+VERSION=4.83
+Added - New INFO button for storing text info per profile
+Added - Keithley 2000 DMM USER tab config
+4.82 updates were:
 Bugfix - Win11 theme fix various small button sizes
 4.81 updates were:
 Bugfix - Dev1 REGEX checkbox had a bug
