@@ -1,4 +1,6 @@
-VERSION=4.83
+VERSION=4.84
+Updated - INFO pop-up functionality changes
+4.83 updates were:
 Added - New INFO button for storing text info per profile
 Added - Keithley 2000 DMM USER tab config
 4.82 updates were:
