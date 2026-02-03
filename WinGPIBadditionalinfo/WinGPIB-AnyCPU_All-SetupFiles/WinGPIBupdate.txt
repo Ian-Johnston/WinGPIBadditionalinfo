@@ -1,4 +1,6 @@
-VERSION=4.84
+VERSION=4.85
+BugFix - 3245A Cal & R6581T extract were broken due to recent update.
+4.84 updates were:
 Updated - INFO pop-up functionality changes
 4.83 updates were:
 Added - New INFO button for storing text info per profile
