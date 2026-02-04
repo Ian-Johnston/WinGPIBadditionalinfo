@@ -1,4 +1,8 @@
-VERSION=4.85
+VERSION=4.87
+Added - USER tab TOGGLE command can now send multiple commands
+4.85 updates were:
+BugFix - USER tab TOGGLE command oncolor fixed
+4.85 updates were:
 BugFix - 3245A Cal & R6581T extract were broken due to recent update.
 4.84 updates were:
 Updated - INFO pop-up functionality changes
