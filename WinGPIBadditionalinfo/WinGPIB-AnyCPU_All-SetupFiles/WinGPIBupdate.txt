@@ -1,9 +1,11 @@
-VERSION=4.87
+VERSION=4.88
+Added - USER tab, ability to reset multiple charts and stats panel under one button
+4.87 updates were:
 Added - USER tab TOGGLE command can now send multiple commands
-4.85 updates were:
+4.86 updates were:
 BugFix - USER tab TOGGLE command oncolor fixed
 4.85 updates were:
-BugFix - 3245A Cal & R6581T extract were broken due to recent update.
+BugFix - 3245A Cal & R6581T extract were broken due to recent update
 4.84 updates were:
 Updated - INFO pop-up functionality changes
 4.83 updates were:
