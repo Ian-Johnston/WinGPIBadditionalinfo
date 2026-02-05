@@ -1,4 +1,6 @@
-VERSION=4.89
+VERSION=4.90
+BugFix - Fixed USER tab gate code
+4.89 updates were:
 BugFix - 3458A CalRam extract fixed (hopefully)
 BugFix - Tidy USER tab use of respNorm/respRaw in source
 4.88 updates were:
