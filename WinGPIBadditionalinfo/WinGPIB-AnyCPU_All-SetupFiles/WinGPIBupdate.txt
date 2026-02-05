@@ -1,4 +1,7 @@
-VERSION=4.88
+VERSION=4.89
+BugFix - 3458A CalRam extract fixed (hopefully)
+BugFix - Tidy USER tab use of respNorm/respRaw in source
+4.88 updates were:
 Added - USER tab, ability to reset multiple charts and stats panel under one button
 4.87 updates were:
 Added - USER tab TOGGLE command can now send multiple commands
