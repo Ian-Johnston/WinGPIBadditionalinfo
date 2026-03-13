@@ -1,4 +1,6 @@
-VERSION=4.90
+VERSION=4.91
+BugFix/enhancement - Re-write incoming GPIB value routines, affects the Dev1 and Dev2 checkboxes
+4.90 updates were:
 BugFix - Fixed USER tab gate code
 4.89 updates were:
 BugFix - 3458A CalRam extract fixed (hopefully)
