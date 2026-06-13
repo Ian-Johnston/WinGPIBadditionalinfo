@@ -1,4 +1,13 @@
-VERSION=4.91
+VERSION=4.95
+3458A Drift Mon tab - Added functionality for 5off 3458A units
+4.94 updates were:
+New tab 3458A Drift Mon, allowing users to record and monitor 3458A U180 drift
+4.93 updates were:
+Data Log tab functionality made more intuitive
+4.92 updates were:
+General GUI tweaks
+4.91 updates were:
+Misc.
 BugFix/enhancement - Re-write incoming GPIB value routines, affects the Dev1 and Dev2 checkboxes
 4.90 updates were:
 BugFix - Fixed USER tab gate code
