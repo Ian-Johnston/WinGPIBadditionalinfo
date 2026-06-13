@@ -1,4 +1,6 @@
-VERSION=4.95
+VERSION=4.96
+3458A Drift Mon tab - Added CAL? 1,1 and CAL? 2,1
+4.95 updates were:
 3458A Drift Mon tab - Added functionality for 5off 3458A units
 4.94 updates were:
 New tab 3458A Drift Mon, allowing users to record and monitor 3458A U180 drift
