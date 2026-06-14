@@ -1,4 +1,6 @@
-VERSION=4.96
+VERSION=4.97
+3458A Drift Mon tab - Added deviation columns and horizontal scroll bar
+4.96 updates were:
 3458A Drift Mon tab - Added CAL? 1,1 and CAL? 2,1
 4.95 updates were:
 3458A Drift Mon tab - Added functionality for 5off 3458A units
