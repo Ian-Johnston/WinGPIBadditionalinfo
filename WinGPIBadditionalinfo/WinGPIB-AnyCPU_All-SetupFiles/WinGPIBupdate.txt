@@ -1,4 +1,6 @@
-VERSION=4.99
+VERSION=4.100
+3458A Drift Mon tab - HELP pop-up updated, some small GUI changes
+4.99 updates were:
 3458A Drift Mon tab - Added S/N field & another summary stat
 4.98 updates were:
 3458A Drift Mon tab - Added summary panel
