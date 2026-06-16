@@ -1,4 +1,6 @@
-VERSION=4.98
+VERSION=4.99
+3458A Drift Mon tab - Added S/N field & another summary stat
+4.98 updates were:
 3458A Drift Mon tab - Added summary panel
 4.97 updates were:
 3458A Drift Mon tab - Added deviation columns and horizontal scroll bar
