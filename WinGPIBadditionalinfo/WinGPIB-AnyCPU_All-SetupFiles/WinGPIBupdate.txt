@@ -1,4 +1,6 @@
-VERSION=4.101
+VERSION=4.102
+3458A Drift Mon tab - Allow for selection of up to 8off 3458A, tweaked GUI
+4.101 updates were:
 3458A Drift Mon tab - Added CSV backup button, corrected issue when deleting day 1
 4.100 updates were:
 3458A Drift Mon tab - HELP pop-up updated, some small GUI changes
