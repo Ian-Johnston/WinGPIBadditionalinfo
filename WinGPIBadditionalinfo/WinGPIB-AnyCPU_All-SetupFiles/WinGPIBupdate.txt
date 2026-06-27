@@ -1,4 +1,6 @@
-VERSION=4.102
+VERSION=4.103
+3458A Drift Mon tab - Added example 1Vdc reading to the stats panel. General tidy up of GUI
+4.102 updates were:
 3458A Drift Mon tab - Allow for selection of up to 8off 3458A, tweaked GUI
 4.101 updates were:
 3458A Drift Mon tab - Added CSV backup button, corrected issue when deleting day 1
