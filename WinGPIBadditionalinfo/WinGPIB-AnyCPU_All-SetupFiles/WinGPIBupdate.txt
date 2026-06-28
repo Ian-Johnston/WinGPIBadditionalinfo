@@ -1,4 +1,6 @@
-VERSION=4.104
+VERSION=4.105
+Devices tab - various GUI tweaks
+4.104 updates were:
 3458A Drift Mon tab - Small GUI tweak
 4.103 updates were:
 3458A Drift Mon tab - Added example 1Vdc reading to the stats panel. General tidy up of GUI
