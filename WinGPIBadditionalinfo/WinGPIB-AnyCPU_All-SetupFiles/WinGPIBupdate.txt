@@ -1,4 +1,6 @@
-VERSION=4.105
+VERSION=4.106
+3478A code tidy up, 3458A Drift Mon table column widths and other tweaks
+4.104 updates were:
 Devices tab - various GUI tweaks
 4.104 updates were:
 3458A Drift Mon tab - Small GUI tweak
