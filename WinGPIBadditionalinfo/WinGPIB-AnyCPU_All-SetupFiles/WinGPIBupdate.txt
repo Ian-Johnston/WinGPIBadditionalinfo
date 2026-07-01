@@ -1,4 +1,6 @@
-VERSION=4.107
+VERSION=4.108
+Available COM ports button never disabled now
+4.107 updates were:
 Available COM ports now sorted in order
 4.106 updates were:
 3478A code tidy up, 3458A Drift Mon table column widths and other tweaks
