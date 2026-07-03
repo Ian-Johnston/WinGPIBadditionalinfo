@@ -1,4 +1,6 @@
-VERSION=4.108
+VERSION=4.109
+Various misc GUI tweaks
+4.108 updates were:
 Available COM ports button never disabled now
 4.107 updates were:
 Available COM ports now sorted in order
