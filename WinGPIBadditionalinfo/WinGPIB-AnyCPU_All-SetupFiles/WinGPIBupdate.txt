@@ -1,4 +1,6 @@
-VERSION=4.110
+VERSION=4.111
+CAL? 72 Chart now displayed on 3458A Drift Monitor tab when maximized
+4.119 updates were:
 3458A Drift Monitor tab now has a MAXIMIZE button
 4.109 updates were:
 Various misc GUI tweaks
