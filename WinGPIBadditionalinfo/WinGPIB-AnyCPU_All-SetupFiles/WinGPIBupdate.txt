@@ -1,4 +1,6 @@
-VERSION = 4.113
+VERSION = 4.114
+3458A CalRAM .bin Decode updated
+4.113 updates =
 3458A CalRAM write back to the DMM via GPIB
 4.112 updates =
 3458A Drift Monitor NOTES now has keyword command [RECAL] to add bar to Chart
