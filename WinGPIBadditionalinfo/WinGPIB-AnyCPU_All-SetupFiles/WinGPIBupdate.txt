@@ -1,4 +1,6 @@
-VERSION = 4.117
+VERSION = 5.000
+New live statistics and many other updates
+4.117 updates =
 3458A CalRAM upload added pop-ups for CalRAM file check, various GUI tweaks
 4.116 updates =
 Various GUI tweaks
