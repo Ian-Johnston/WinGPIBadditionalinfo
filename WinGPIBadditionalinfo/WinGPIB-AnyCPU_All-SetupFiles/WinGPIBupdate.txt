@@ -1,4 +1,6 @@
-VERSION = 5.006
+VERSION = 5.007
+DATA tab tweaks
+5.006 updates =
 DATA tab tweaks
 5.005 updates =
 Various bug fixes
