@@ -1,4 +1,8 @@
-VERSION = 5.001
+VERSION = 5.003
+Locale bug fix Playback Chart
+5.002 updates =
+Various bugfixes (Data & Playback tabs)
+5.001 updates =
 PPM Deviation calculation fix
 5.000 updates =
 New live statistics and many other updates
