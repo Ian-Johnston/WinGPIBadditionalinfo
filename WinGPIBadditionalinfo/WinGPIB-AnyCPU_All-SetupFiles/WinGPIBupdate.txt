@@ -1,4 +1,6 @@
-VERSION = 5.003
+VERSION = 5.004
+Bugfix various locale issues
+5.003 updates =
 Locale bug fix Playback Chart
 5.002 updates =
 Various bugfixes (Data & Playback tabs)
