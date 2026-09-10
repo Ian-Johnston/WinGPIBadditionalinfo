@@ -1,4 +1,6 @@
-VERSION = 5.007
+VERSION = 5.008
+LiveWatch Stats Reset button tweak
+5.007 updates =
 DATA tab tweaks
 5.006 updates =
 DATA tab tweaks
