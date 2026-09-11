@@ -1,4 +1,6 @@
-VERSION = 5.008
+VERSION = 5.009
+Live Analysis charts - new options added
+5.008 updates =
 LiveWatch Stats Reset button tweak
 5.007 updates =
 DATA tab tweaks
