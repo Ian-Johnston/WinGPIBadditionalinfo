@@ -1,4 +1,6 @@
-VERSION = 5.009
+VERSION = 5.010
+Live Analysis MEAN trace fix (possible)
+5.009 updates =
 Live Analysis charts - new options added
 5.008 updates =
 LiveWatch Stats Reset button tweak
