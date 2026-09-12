@@ -1,4 +1,6 @@
-VERSION = 5.011
+VERSION = 5.012
+Bugfix Playback Chart
+5.011 updates =
 Playback Chart added new Short Term Mean trace selection
 5.010 updates =
 Live Analysis MEAN trace fix (possible)
