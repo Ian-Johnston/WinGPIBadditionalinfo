@@ -1,4 +1,6 @@
-VERSION = 5.010
+VERSION = 5.011
+Playback Chart added new Short Term Mean trace selection
+5.010 updates =
 Live Analysis MEAN trace fix (possible)
 5.009 updates =
 Live Analysis charts - new options added
