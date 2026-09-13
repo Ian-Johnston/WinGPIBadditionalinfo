@@ -1,4 +1,6 @@
-VERSION = 5.014
+VERSION = 5.015
+Playback Chart bug fixes
+5.014 updates =
 Playback Chart Allan Deviation added
 5.013 updates =
 DATA tab units selection mods
