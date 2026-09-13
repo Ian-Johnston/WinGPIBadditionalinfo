@@ -1,4 +1,6 @@
-VERSION = 5.016
+VERSION = 5.017
+Playback chart bug fix
+5.016 updates =
 Additional Allan Deviation feature added
 5.015 updates =
 Playback Chart bug fixes
