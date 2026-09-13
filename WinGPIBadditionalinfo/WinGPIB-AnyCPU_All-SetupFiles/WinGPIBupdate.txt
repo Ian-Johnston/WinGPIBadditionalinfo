@@ -1,4 +1,6 @@
-VERSION = 5.017
+VERSION = 5.018
+Added MDEV to the Allan Deviation pop-up
+5.017 updates =
 Playback chart bug fix
 5.016 updates =
 Additional Allan Deviation feature added
