@@ -1,4 +1,6 @@
-VERSION = 5.018
+VERSION = 5.019
+Allan Deviation plot slight tweak
+5.018 updates =
 Added MDEV to the Allan Deviation pop-up
 5.017 updates =
 Playback chart bug fix
