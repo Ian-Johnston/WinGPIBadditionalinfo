@@ -1,4 +1,6 @@
-VERSION = 5.020
+VERSION = 5.021
+Live Analysis chart freeze/reset fix, square corners applied app-wide, Allan Deviation axis/help polish
+5.020 updates =
 Playback Chart HELP text re-done
 5.019 updates =
 Allan Deviation plot slight tweak
