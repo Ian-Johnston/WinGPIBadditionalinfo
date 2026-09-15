@@ -1,6 +1,8 @@
-VERSION = 5.023
+VERSION = 5.024
+New Playback Chart PPM/DegC mode added
+5.023 updates =
 Playback Chart GUI tweak
-5.021 updates =
+5.022 updates =
 Added additional Tempco option on Playback Chart
 5.021 updates =
 Live Analysis chart freeze/reset fix, square corners applied app-wide, Allan Deviation axis/help polish
