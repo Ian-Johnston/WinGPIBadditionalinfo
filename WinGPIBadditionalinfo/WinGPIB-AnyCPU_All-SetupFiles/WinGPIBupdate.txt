@@ -1,4 +1,6 @@
-VERSION = 5.022
+VERSION = 5.023
+Playback Chart GUI tweak
+5.021 updates =
 Added additional Tempco option on Playback Chart
 5.021 updates =
 Live Analysis chart freeze/reset fix, square corners applied app-wide, Allan Deviation axis/help polish
