@@ -1,4 +1,6 @@
-VERSION = 5.024
+VERSION = 5.025
+Added CSV file error detection capability
+5.024 updates =
 New Playback Chart PPM/DegC mode added
 5.023 updates =
 Playback Chart GUI tweak
