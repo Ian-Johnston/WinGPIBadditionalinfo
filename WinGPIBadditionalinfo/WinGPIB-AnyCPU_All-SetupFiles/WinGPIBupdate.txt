@@ -1,4 +1,6 @@
-VERSION = 5.027
+VERSION = 5.028
+Playback Chart light mode fixes and other tweaks
+5.027 updates =
 Playback Chart PPM/DegC radio buttons bug fix
 5.026 updates =
 Fixed data entry issue in Live Chart
