@@ -1,4 +1,6 @@
-VERSION = 5.026
+VERSION = 5.027
+Playback Chart PPM/DegC radio buttons bug fix
+5.026 updates =
 Fixed data entry issue in Live Chart
 5.025 updates =
 Added CSV file error detection capability
