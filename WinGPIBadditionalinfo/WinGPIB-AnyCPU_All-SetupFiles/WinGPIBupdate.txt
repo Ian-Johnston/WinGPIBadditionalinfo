@@ -1,4 +1,6 @@
-VERSION = 5.028
+VERSION = 5.029
+Playback Chart minor tweaks
+5.028 updates =
 Playback Chart light mode fixes and other tweaks
 5.027 updates =
 Playback Chart PPM/DegC radio buttons bug fix
