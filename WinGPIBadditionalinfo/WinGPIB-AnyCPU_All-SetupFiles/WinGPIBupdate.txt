@@ -1,4 +1,6 @@
-VERSION = 5.029
+VERSION = 5.030
+Check for updates - tweaked
+5.029 updates =
 Playback Chart minor tweaks
 5.028 updates =
 Playback Chart light mode fixes and other tweaks
