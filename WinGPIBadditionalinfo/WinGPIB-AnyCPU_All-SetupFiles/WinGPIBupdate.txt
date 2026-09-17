@@ -1,4 +1,6 @@
-VERSION = 5.030
+VERSION = 5.031
+Playback Chart now re-sizeable
+5.030 updates =
 Check for updates - tweaked
 5.029 updates =
 Playback Chart minor tweaks
