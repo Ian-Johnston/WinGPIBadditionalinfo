@@ -1,4 +1,6 @@
-VERSION = 5.034
+VERSION = 5.035
+Playback Chart bugfix labels not centred properly
+5.034 updates =
 Playback Chart left justify controls
 5.033 updates =
 Fix version check bug
