@@ -1,4 +1,6 @@
-VERSION = 5.032
+VERSION = 5.033
+Fix version check bug
+5.032 updates =
 Playback Chart tools now space out with form
 5.031 updates =
 Playback Chart now re-sizeable
