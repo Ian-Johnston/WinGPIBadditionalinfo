@@ -1,4 +1,6 @@
-VERSION = 5.033
+VERSION = 5.034
+Playback Chart left justify controls
+5.033 updates =
 Fix version check bug
 5.032 updates =
 Playback Chart tools now space out with form
