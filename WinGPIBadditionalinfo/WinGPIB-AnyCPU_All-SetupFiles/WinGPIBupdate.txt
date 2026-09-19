@@ -1,4 +1,6 @@
-VERSION = 5.035
+VERSION = 5.036
+DATA tab & Live Analysis bug fixes
+5.035 updates =
 Playback Chart bugfix labels not centred properly
 5.034 updates =
 Playback Chart left justify controls
