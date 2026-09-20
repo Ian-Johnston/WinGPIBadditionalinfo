@@ -1,4 +1,6 @@
-VERSION = 5.038
+VERSION = 5.039
+Live Analysis Device name & checkbox bug fix
+5.038 updates =
 Playback Chart device averaging bugfix
 5.037 updates =
 Rest button added to Live Analysis charts, fixed Temp y-scale resolution
