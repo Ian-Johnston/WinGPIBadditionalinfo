@@ -1,4 +1,6 @@
-VERSION = 5.041
+VERSION = 5.042
+Live Analysis charts - fix scales/gridlines
+5.041 updates =
 Live Analysis Chart checkboxes bugfix
 5.040 updates =
 Live Analysis Chart size of charts tweak
