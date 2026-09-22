@@ -1,4 +1,6 @@
-VERSION = 5.043
+VERSION = 5.044
+Live Analysis button issue bugfix
+5.043 updates =
 Playback Chart Device 2 logging only bugfix
 5.042 updates =
 Live Analysis charts - fix scales/gridlines
