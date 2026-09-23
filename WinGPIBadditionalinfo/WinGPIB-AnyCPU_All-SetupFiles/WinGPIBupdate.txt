@@ -1,4 +1,6 @@
-VERSION = 5.044
+VERSION = 5.100
+Live Chart upgraded to use ScottPlot
+5.044 updates =
 Live Analysis button issue bugfix
 5.043 updates =
 Playback Chart Device 2 logging only bugfix
