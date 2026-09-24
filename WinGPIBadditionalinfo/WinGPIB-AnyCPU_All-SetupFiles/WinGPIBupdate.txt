@@ -1,4 +1,6 @@
-VERSION = 5.102
+VERSION = 5.103
+Playback Chart GUI tweaks & additions
+5.102 updates =
 Playback Chart now uses ScottPlot for charting
 5.101 updates =
 Bug fix in installer (.msi)
