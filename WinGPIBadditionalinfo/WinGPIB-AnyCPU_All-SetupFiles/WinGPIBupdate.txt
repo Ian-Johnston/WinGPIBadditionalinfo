@@ -1,4 +1,6 @@
-VERSION = 5.103
+VERSION = 5.104
+Playback Chart extra scale labels added
+5.102 updates =
 Playback Chart GUI tweaks & additions
 5.102 updates =
 Playback Chart now uses ScottPlot for charting
