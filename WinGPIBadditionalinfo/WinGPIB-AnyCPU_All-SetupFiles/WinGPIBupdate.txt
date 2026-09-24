@@ -1,4 +1,6 @@
-VERSION = 5.105
+VERSION = 5.106
+Playback Chart Analysis functions added
+5.105 updates =
 Playback Chart bugfix loading CSV's
 5.104 updates =
 Playback Chart extra scale labels added
