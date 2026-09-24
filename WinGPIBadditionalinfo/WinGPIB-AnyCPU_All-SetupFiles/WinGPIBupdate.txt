@@ -1,4 +1,8 @@
-VERSION = 5.100
+VERSION = 5.102
+Playback Chart now uses ScottPlot for charting
+5.101 updates =
+Bug fix in installer (.msi)
+5.100 updates =
 Live Chart upgraded to use ScottPlot
 5.044 updates =
 Live Analysis button issue bugfix
