@@ -1,4 +1,6 @@
-VERSION = 5.107
+VERSION = 5.108
+Playback Chart GUI tweaks
+5.107 updates =
 Playback Chart Analysis bugfix
 5.106 updates =
 Playback Chart Analysis functions added
