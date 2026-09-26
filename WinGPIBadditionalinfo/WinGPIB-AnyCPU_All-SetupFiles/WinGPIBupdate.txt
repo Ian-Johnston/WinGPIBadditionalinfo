@@ -1,4 +1,6 @@
-VERSION = 5.113
+VERSION = 5.114
+Playback Chart right click menu additions
+5.113 updates =
 Playback Chart stats calcs tweak
 5.112 updates =
 Bugfix for Live Analysis temperature trace, damaged settings file recovery, Playback Chart Allan/Histogram pop-ups
