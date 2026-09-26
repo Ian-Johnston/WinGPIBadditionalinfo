@@ -1,4 +1,6 @@
-VERSION = 5.111
+VERSION = 5.112
+Bugfix for Live Analysis temperature trace, damaged settings file recovery, Playback Chart Allan/Histogram pop-ups
+5.111 updates =
 Playback Chart Histogram & Allan.D pop-up bugfix
 5.110 updates =
 Playback Chart Histogram bugfix
