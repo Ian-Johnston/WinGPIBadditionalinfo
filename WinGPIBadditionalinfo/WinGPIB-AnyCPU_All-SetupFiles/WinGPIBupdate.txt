@@ -1,4 +1,6 @@
-VERSION = 5.114
+VERSION = 5.115
+Playback Chart size config on SETTINGS tab
+5.114 updates =
 Playback Chart right click menu additions
 5.113 updates =
 Playback Chart stats calcs tweak
