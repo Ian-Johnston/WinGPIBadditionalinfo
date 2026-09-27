@@ -1,4 +1,6 @@
-VERSION = 5.116
+VERSION = 5.117
+Playback Chart right click menu modded
+5.116 updates =
 Playback Chart bugfix Time(mins) display
 5.115 updates =
 Playback Chart size config on SETTINGS tab
