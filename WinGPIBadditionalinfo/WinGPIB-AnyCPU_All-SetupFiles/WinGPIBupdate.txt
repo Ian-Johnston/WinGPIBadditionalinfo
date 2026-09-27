@@ -1,4 +1,6 @@
-VERSION = 5.115
+VERSION = 5.116
+Playback Chart bugfix Time(mins) display
+5.115 updates =
 Playback Chart size config on SETTINGS tab
 5.114 updates =
 Playback Chart right click menu additions
