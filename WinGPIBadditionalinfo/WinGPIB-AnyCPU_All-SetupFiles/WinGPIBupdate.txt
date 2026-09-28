@@ -1,4 +1,6 @@
-VERSION = 5.117
+VERSION = 5.118
+Playback Chart GUI tweaks
+5.117 updates =
 Playback Chart right click menu modded
 5.116 updates =
 Playback Chart bugfix Time(mins) display
