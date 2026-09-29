@@ -1,4 +1,6 @@
-VERSION = 5.118
+VERSION = 5.119
+Playback Chart Allan Deviation bugfix
+5.118 updates =
 Playback Chart GUI tweaks
 5.117 updates =
 Playback Chart right click menu modded
