@@ -1,4 +1,6 @@
-VERSION = 5.123
+VERSION = 5.124
+3458A CAL?72 tab stats panel tooltip updated
+5.123 updates =
 Added new DAY 1 stat to 3458A CAL?72 tab
 5.122 updates =
 Added [DAY1] functionality to 3458A CAL?72 tab
