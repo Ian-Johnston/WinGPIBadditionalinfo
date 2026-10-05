@@ -1,4 +1,6 @@
-VERSION = 5.120
+VERSION = 5.121
+Bugfix - Expand View button crashed WInGPIB on 3458A CAL?72 tab
+5.120 updates =
 VISA: Timeout (ms) now applies to writes (fixes timeouts)
 5.119 updates =
 Playback Chart Allan Deviation bugfix
