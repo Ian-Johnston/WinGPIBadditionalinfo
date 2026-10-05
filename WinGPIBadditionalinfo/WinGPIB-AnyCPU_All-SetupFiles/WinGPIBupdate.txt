@@ -1,4 +1,6 @@
-VERSION = 5.121
+VERSION = 5.122
+Added [DAY1] functionality to 3458A CAL?72 tab
+5.121 updates =
 Bugfix - Expand View button crashed WInGPIB on 3458A CAL?72 tab
 5.120 updates =
 VISA: Timeout (ms) now applies to writes (fixes timeouts)
