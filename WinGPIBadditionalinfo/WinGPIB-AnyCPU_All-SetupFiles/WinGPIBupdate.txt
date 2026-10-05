@@ -1,4 +1,6 @@
-VERSION = 5.122
+VERSION = 5.123
+Added new DAY 1 stat to 3458A CAL?72 tab
+5.122 updates =
 Added [DAY1] functionality to 3458A CAL?72 tab
 5.121 updates =
 Bugfix - Expand View button crashed WInGPIB on 3458A CAL?72 tab
