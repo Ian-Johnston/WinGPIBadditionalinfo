@@ -1,4 +1,6 @@
-VERSION = 5.124
+VERSION = 5.125
+Added Zoom Overview to the Playback Chart
+5.124 updates =
 3458A CAL?72 tab stats panel tooltip updated
 5.123 updates =
 Added new DAY 1 stat to 3458A CAL?72 tab
