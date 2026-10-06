@@ -1,4 +1,6 @@
-VERSION = 5.126
+VERSION = 5.127
+Playback Chart X-Scale enhancement when zooming
+5.126 updates =
 Playback Chart CSV load bugfix, Zoom Overview enhancements
 5.125 updates =
 Added Zoom Overview to the Playback Chart
