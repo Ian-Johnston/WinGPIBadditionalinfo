@@ -1,4 +1,6 @@
-VERSION = 5.127
+VERSION = 5.128
+Playback Chart pop-ups tidy up
+5.127 updates =
 Playback Chart X-Scale enhancement when zooming
 5.126 updates =
 Playback Chart CSV load bugfix, Zoom Overview enhancements
