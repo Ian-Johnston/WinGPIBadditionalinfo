@@ -1,4 +1,6 @@
-VERSION = 5.128
+VERSION = 5.129
+Playback Chart added keyboard zoom/pan controls
+5.128 updates =
 Playback Chart pop-ups tidy up
 5.127 updates =
 Playback Chart X-Scale enhancement when zooming
