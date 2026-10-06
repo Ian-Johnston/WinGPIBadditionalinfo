@@ -1,4 +1,6 @@
-VERSION = 5.125
+VERSION = 5.126
+Playback Chart CSV load bugfix, Zoom Overview enhancements
+5.125 updates =
 Added Zoom Overview to the Playback Chart
 5.124 updates =
 3458A CAL?72 tab stats panel tooltip updated
