@@ -1,4 +1,6 @@
-VERSION = 5.129
+VERSION = 5.130
+Playback Chart pop-ups now have Always-On-Top settings
+5.129 updates =
 Playback Chart added keyboard zoom/pan controls
 5.128 updates =
 Playback Chart pop-ups tidy up
