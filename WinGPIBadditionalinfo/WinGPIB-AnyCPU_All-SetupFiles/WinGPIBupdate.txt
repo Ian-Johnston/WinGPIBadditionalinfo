@@ -1,4 +1,6 @@
-VERSION = 5.131
+VERSION = 5.132
+Playback Chart Exported Reports bugfix
+5.131 updates =
 Playback Chart new EXPORT REPORT (html)
 5.130 updates =
 Playback Chart pop-ups now have Always-On-Top settings
