@@ -1,4 +1,6 @@
-VERSION = 5.130
+VERSION = 5.131
+Playback Chart new EXPORT REPORT (html)
+5.130 updates =
 Playback Chart pop-ups now have Always-On-Top settings
 5.129 updates =
 Playback Chart added keyboard zoom/pan controls
