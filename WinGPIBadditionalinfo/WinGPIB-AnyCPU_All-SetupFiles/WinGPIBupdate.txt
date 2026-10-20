@@ -1,4 +1,6 @@
-VERSION = 5.133
+VERSION = 5.134
+Playback Chart added ability to add comments to traces - GUI tweak
+5.133 updates =
 Playback Chart added ability to add comments to traces
 5.132 updates =
 Playback Chart Exported Reports bugfix
