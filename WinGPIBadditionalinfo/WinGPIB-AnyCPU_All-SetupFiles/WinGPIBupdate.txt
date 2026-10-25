@@ -1,4 +1,6 @@
-VERSION = 5.135
+VERSION = 5.136
+CAL?72 logic fixed to stop operation when logging
+5.135 updates =
 Profiles bug fix - Check yours after install
 5.134 updates =
 Playback Chart added ability to add comments to traces - GUI tweak
