@@ -1,4 +1,6 @@
-VERSION = 5.134
+VERSION = 5.135
+Profiles bug fix - Check yours after install
+5.134 updates =
 Playback Chart added ability to add comments to traces - GUI tweak
 5.133 updates =
 Playback Chart added ability to add comments to traces
